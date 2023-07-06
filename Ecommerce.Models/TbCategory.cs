@@ -9,7 +9,10 @@ namespace Ecommerce.Models
 {
     public class TbCategory
     {
-        
+        public TbCategory()
+        {
+            TbDepartment _TbDepartment = new TbDepartment();
+        }
 
         [Key]
         public int CategoryId { get; set; }
@@ -23,6 +26,6 @@ namespace Ecommerce.Models
 
 
         public int DepartmentId { get; set; }
-
+        public virtual TbDepartment _TbDepartment { get; set; }
     }
 }
