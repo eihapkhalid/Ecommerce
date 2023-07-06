@@ -12,6 +12,7 @@ namespace Ecommerce.Models
         public TbTool()
         {
             TbCategory _TbCategory = new TbCategory();
+            ICollection<TbImageTool> _TbImageTool = new HashSet<TbImageTool>();
         }
 
         [Key]
@@ -41,6 +42,7 @@ namespace Ecommerce.Models
         public int CategoryId { get; set; }
         public virtual TbCategory _TbCategory { get; set; }
 
+        public virtual ICollection<TbImageTool> _TbImageTool { get; set; }
         /********************************************/
     }
 }
