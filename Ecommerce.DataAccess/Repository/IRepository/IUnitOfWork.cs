@@ -9,15 +9,15 @@ namespace Ecommerce.DataAccess.Repository.IRepository
     public interface IUnitOfWork
     {
         void Save();
-        IAboutRepository AboutRepository { get; }
-        ICategoryRepository CategoryRepository { get; }
-        ICompanyInformationRepository CompanyInformationRepository { get; }
-        ICurrencyRepository CurrencyRepository { get; }
-        IDepartmentRepository DepartmentRepository { get; }
-        IImageToolRepository ImageToolRepository { get; }
-        ILanguageRepository LanguageRepository { get; }
-        ITeamRepository TeamsRepository { get; }
-        IToolRepository ToolRepository { get; }
-        ITellUsRepository TellUsRepository { get; }
+        public IAboutRepository TbAbout { get; }
+        public ICategoryRepository TbCategory { get; }
+        public ICompanyInformationRepository TbCompanyInformation { get;}
+        public ICurrencyRepository TbCurrency { get; }
+        public IDepartmentRepository TbDepartment { get; }
+        public IImageToolRepository TbImageTool { get; }
+        public ILanguageRepository TbLanguage { get; }
+        public ITeamRepository TbTeams { get; }
+        public IToolRepository TbTool { get; }
+        public ITellUsRepository TbTellUs { get; }
     }
 }
