@@ -12,6 +12,7 @@ namespace Ecommerce.Models
         public TbCategory()
         {
             TbDepartment _TbDepartment = new TbDepartment();
+            ICollection<TbTool> _TbTool = new HashSet<TbTool>();
         }
 
         [Key]
@@ -27,5 +28,7 @@ namespace Ecommerce.Models
 
         public int DepartmentId { get; set; }
         public virtual TbDepartment _TbDepartment { get; set; }
+
+        public virtual ICollection<TbTool> _TbTool { get; set; }
     }
 }
