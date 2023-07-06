@@ -9,6 +9,10 @@ namespace Ecommerce.Models
 {
     public class TbCompanyInformation
     {
+        public TbCompanyInformation()
+        {
+            ICollection<TbLanguage> _TbLanguage = new HashSet<TbLanguage>();
+        }
         [Key]
         public int CompanyInformationID { get; set; }
 
@@ -36,5 +40,9 @@ namespace Ecommerce.Models
 
         [Required]
         public int CompanyInformationCurrentState { get; set; }
+
+
+        // A single CompanyInformation  belongs to multiple Langauge:
+        public virtual ICollection<TbLanguage> _TbLanguage { get; set; }
     }
 }
