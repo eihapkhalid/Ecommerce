@@ -64,6 +64,89 @@ namespace Ecommerce.DataAccess.Data
                      .HasMany(c => c._TbTeam)
                      .WithOne(b => b._TbAbout)
                      .HasForeignKey(b => b.AboutId);
+            // Seed data tables:
+            modelBuilder.Entity<TbDepartment>().HasData(
+                    new TbDepartment { DepartmentId = 1, DepartmentName = "Action", DepartmentCurrentState = 1 },
+                    new TbDepartment { DepartmentId = 2, DepartmentName = "SciFi", DepartmentCurrentState = 2 },
+                    new TbDepartment { DepartmentId = 3, DepartmentName = "History", DepartmentCurrentState = 3 },
+                    new TbDepartment { DepartmentId = 4, DepartmentName = "Comedy", DepartmentCurrentState = 4 },
+                    new TbDepartment { DepartmentId = 5, DepartmentName = "Drama", DepartmentCurrentState = 5 });
+
+            modelBuilder.Entity<TbCategory>().HasData(
+                    new TbCategory { CategoryId = 1, CategoryName = "Action", CategoryCurrentState = 1, DepartmentId = 1 },
+                    new TbCategory { CategoryId = 2, CategoryName = "SciFi", CategoryCurrentState = 2, DepartmentId = 1 },
+                    new TbCategory { CategoryId = 3, CategoryName = "History", CategoryCurrentState = 3, DepartmentId = 2 },
+                    new TbCategory { CategoryId = 4, CategoryName = "Comedy", CategoryCurrentState = 4, DepartmentId = 2 },
+                    new TbCategory { CategoryId = 5, CategoryName = "Drama", CategoryCurrentState = 5, DepartmentId = 3 });
+
+            modelBuilder.Entity<TbTool>().HasData(
+                    new TbTool { ToolId = 1, ToolName = "Hammer", ToolCurrentState = 1, ToolSticker = "A1", ToolDescription = "A heavy-duty hammer for construction work", ToolProductPrice = 10.99m, CategoryId = 1 },
+                    new TbTool { ToolId = 2, ToolName = "Screwdriver", ToolCurrentState = 1, ToolSticker = "B1", ToolDescription = "A versatile screwdriver for various tasks", ToolProductPrice = 5.99m, CategoryId = 1 },
+                    new TbTool { ToolId = 3, ToolName = "Telescope", ToolCurrentState = 1, ToolSticker = "C1", ToolDescription = "A powerful telescope for stargazing", ToolProductPrice = 99.99m, CategoryId = 2 },
+                    new TbTool { ToolId = 4, ToolName = "Camera", ToolCurrentState = 1, ToolSticker = "D1", ToolDescription = "A high-resolution camera for capturing moments", ToolProductPrice = 199.99m, CategoryId = 2 },
+                    new TbTool { ToolId = 5, ToolName = "Book", ToolCurrentState = 1, ToolSticker = "E1", ToolDescription = "An informative book on historical events", ToolProductPrice = 19.99m, CategoryId = 3 });
+            modelBuilder.Entity<TbImageTool>().HasData(
+                    new TbImageTool { ImageTool = 1, ToolProductImgPrimary = "image1.jpg", ToolProductImgSecondry = "image1_secondary.jpg", ImageCurrentState = 1, ToolId = 1 },
+                    new TbImageTool { ImageTool = 2, ToolProductImgPrimary = "image2.jpg", ToolProductImgSecondry = "image2_secondary.jpg", ImageCurrentState = 1, ToolId = 1 },
+                    new TbImageTool { ImageTool = 3, ToolProductImgPrimary = "image3.jpg", ToolProductImgSecondry = "image3_secondary.jpg", ImageCurrentState = 1, ToolId = 2 },
+                    new TbImageTool { ImageTool = 4, ToolProductImgPrimary = "image4.jpg", ToolProductImgSecondry = "image4_secondary.jpg", ImageCurrentState = 1, ToolId = 3 },
+                    new TbImageTool { ImageTool = 5, ToolProductImgPrimary = "image5.jpg", ToolProductImgSecondry = "image5_secondary.jpg", ImageCurrentState = 1, ToolId = 4 });
+            modelBuilder.Entity<TbCompanyInformation>().HasData(
+                    new TbCompanyInformation
+                    {
+                        CompanyInformationID = 1,
+                        CompanyInformationName = "اسم الشركة",
+                        CompanyInformationDescription = "وصف الشركة",
+                        CompanyInformationAddress = "عنوان الشركة",
+                        CompanyInformationPhone = "1234567890",
+                        CompanyInformationEmail = "company@example.com",
+                        CompanyInformationCurrentState = 1
+                    });
+
+            modelBuilder.Entity<TbLanguage>().HasData(
+                new TbLanguage { LanguageId = 1, LanguageName = "عربي", LanguageCurrentState = 1, CompanyInformationID = 1 },
+                new TbLanguage { LanguageId = 2, LanguageName = "English", LanguageCurrentState = 1, CompanyInformationID = 1 }
+            );
+
+            modelBuilder.Entity<TbCurrency>().HasData(
+                new TbCurrency { CurrencyId = 1, CurrencyName = "SDG", CurrencyCurrentState = 1, CompanyInformationID = 1 },
+                new TbCurrency { CurrencyId = 2, CurrencyName = "USD", CurrencyCurrentState = 1, CompanyInformationID = 1 },
+                new TbCurrency { CurrencyId = 3, CurrencyName = "SAR", CurrencyCurrentState = 1, CompanyInformationID = 1 }
+            );
+
+            modelBuilder.Entity<TbAbout>().HasData(
+                new TbAbout
+                {
+                    AboutId = 1,
+                    AboutUsImg = "about_img.jpg",
+                    AboutDescriptionImg = "about_description_img.jpg",
+                    AboutTitelDescription = "عنوان الوصف",
+                    AboutDescription = "وصف المعلومات عنا",
+                    AboutHappyCustomer = 100,
+                    AboutHoursWorked = 5000,
+                    AboutAwardsWinned = 10,
+                    AboutProjectDone = 50,
+                    AboutCurrentState = 1
+                }
+            );
+
+            modelBuilder.Entity<TbTeam>().HasData(
+                new TbTeam { TeamId = 1, TeamName = "عضو الفريق 1", TeamTitle = "مسمى الفريق 1", TeamDescription = "وصف العضو 1", TeamImg = "team_img1.jpg", AboutId = 1 },
+                new TbTeam { TeamId = 2, TeamName = "عضو الفريق 2", TeamTitle = "مسمى الفريق 2", TeamDescription = "وصف العضو 2", TeamImg = "team_img2.jpg", AboutId = 1 },
+                new TbTeam { TeamId = 3, TeamName = "عضو الفريق 3", TeamTitle = "مسمى الفريق 3", TeamDescription = "وصف العضو 3", TeamImg = "team_img3.jpg", AboutId = 1 },
+                new TbTeam { TeamId = 4, TeamName = "عضو الفريق 4", TeamTitle = "مسمى الفريق 4", TeamDescription = "وصف العضو 4", TeamImg = "team_img4.jpg", AboutId = 1 }
+            );
+            modelBuilder.Entity<TbTellUs>().HasData(
+                new TbTellUs
+                {
+                    TellId = 1,
+                    TellName = "اسمك",
+                    TellEmail = "example@example.com",
+                    TellSubject = "عنوان الرسالة",
+                    TellMessage = "نص الرسالة",
+                    TellCurrentState = 1
+                }
+            );
         }
     }
 }
