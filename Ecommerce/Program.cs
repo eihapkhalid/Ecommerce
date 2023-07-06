@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Ecommerce.DataAccess.Data;
+using Ecommerce.DataAccess.Repository.IRepository;
+using Ecommerce.DataAccess.Repository;
+
 namespace Ecommerce
 {
     public class Program
@@ -10,8 +13,15 @@ namespace Ecommerce
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            #region DefaultConnection
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
+            #endregion
+
+            #region UnitOfWork
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(); 
+            #endregion
 
             var app = builder.Build();
 
