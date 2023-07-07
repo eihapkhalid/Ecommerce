@@ -17,6 +17,31 @@
 
   <ItemGroup>
     <None Include="Resources\Resources.resx" />
+    <None Include="wwwroot\uren\assets\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\uren\assets\fonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\uren\assets\fonts\fa-regular-400.svg" />
+    <None Include="wwwroot\uren\assets\fonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\uren\assets\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\uren\assets\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\uren\assets\fonts\ionicons28b5.svg" />
+    <None Include="wwwroot\uren\assets\fonts\lgd641.svg" />
+    <None Include="wwwroot\uren\assets\js\main.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery-ui.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery.barrating.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery.counterup.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery.nice-select.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery.sticky-sidebar.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery.ui.touch-punch.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\jquery.zoom.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\lightgallery.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\scroll-top.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\slick.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\theia-sticky-sidebar.min.js" />
+    <None Include="wwwroot\uren\assets\js\plugins\waypoints.min.js" />
+    <None Include="wwwroot\uren\assets\js\vendor\bootstrap.min.js" />
+    <None Include="wwwroot\uren\assets\js\vendor\jquery-1.12.4.min.js" />
+    <None Include="wwwroot\uren\assets\js\vendor\modernizr-2.8.3.min.js" />
+    <None Include="wwwroot\uren\assets\js\vendor\popper.min.js" />
   </ItemGroup>
 
   <ItemGroup>
