@@ -14,6 +14,10 @@ namespace Ecommerce
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            #region AddMemoryCache
+            builder.Services.AddMemoryCache(); 
+            #endregion
+
             #region DefaultConnection
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
