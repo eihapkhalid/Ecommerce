@@ -44,10 +44,17 @@ namespace Ecommerce
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            
+            app.UseEndpoints(endpoints =>
+            {
+                app.MapControllerRoute(
+                name: "admin",
+                pattern: "{area:exists}/{controller=Customer}/{action=index}");
 
+                app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=index}/{id?}");
+            });
             app.Run();
         }
     }
