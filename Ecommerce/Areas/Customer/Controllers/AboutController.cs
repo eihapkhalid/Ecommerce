@@ -1,5 +1,4 @@
-﻿using Ecommerce.Controllers;
-using Ecommerce.DataAccess.Repository.IRepository;
+﻿using Ecommerce.DataAccess.Repository.IRepository;
 using Ecommerce.DataAccess.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
