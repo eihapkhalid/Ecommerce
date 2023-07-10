@@ -48,8 +48,8 @@ namespace Ecommerce
             app.UseEndpoints(endpoints =>
             {
                 app.MapControllerRoute(
-                name: "admin",
-                pattern: "{area:exists}/{controller=Customer}/{action=index}");
+                name: "Customer",
+                pattern: "{area:exists}/{controller=Home}/{action=index}");
 
                 app.MapControllerRoute(
                 name: "default",
