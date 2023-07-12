@@ -9,7 +9,6 @@ namespace Ecommerce.DataAccess.ViewModels
 {
     public class IndexTellViewModel
     {
-        public LayoutViewModel Layout { get; set; }
         public List<TbCompanyInformation> lstTbCompanyInformations { get; set; }
         public TbTellUs InpTbTellUs { get; set; }
     }
