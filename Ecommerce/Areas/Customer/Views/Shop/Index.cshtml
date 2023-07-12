@@ -1,0 +1,315 @@
+﻿@model IndexShopViewModel;
+    <div class="main-wrapper">
+
+        <!-- Begin Loading Area -->
+        <div class="loading">
+            <div class="text-center middle">
+                <div class="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loading Area End Here -->
+
+        <!-- Begin Uren's Shop Left Sidebar Area -->
+        <div class="shop-content_wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5 order-2 order-lg-1 order-md-1">
+                        <div class="uren-sidebar-catagories_area">
+                            <div class="category-module uren-sidebar_categories">
+                                <div class="category-module_heading">
+                                    <h5>Categories</h5>
+                                </div>
+                                <!-- Departments start -->
+                                <div class="module-body">
+                                    <ul class="module-list_item">
+                                    @foreach (var depart in Model.lstTbDepartments)
+                                    {
+                                        var toolCount = 0;
+                                        var categories = Model.lstTbCategorys.Where(cat => cat.DepartmentId == depart.DepartmentId).ToList();
+                                        foreach (var category in categories)
+                                        {
+                                            var categoryTools = Model.lstTbTools.Where(tool => tool.CategoryId == category.CategoryId).ToList();
+                                            toolCount += categoryTools.Count;
+                                        }
+
+                                        if (toolCount > 0)
+                                        {
+                                                        <li>
+                                                            <a href="javascript:void(0)">@depart.DepartmentName<span>(@toolCount)</span></a>
+                                                            <ul class="module-sub-list_item">
+                                                                <li>
+                                                        @foreach (var category in categories)
+                                                        {
+                                                            var categoryTools = Model.lstTbTools.Where(tool => tool.CategoryId == category.CategoryId).ToList();
+                                                            var categoryToolCount = categoryTools.Count;
+                                                            if (categoryToolCount > 0)
+                                                            {
+                                                                                    <div class="category-item">
+                                                                                        <a href="javascript:void(0)" class="category-link" data-categoryid="@category.CategoryId">@category.CategoryName<span>(@categoryToolCount)</span></a>
+                                                                                    </div>
+                                                            }
+                                                        }
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                        }
+                                    }
+                                    </ul>
+                                </div>
+                                <!-- Departments end -->
+
+
+                            </div>
+                            <div class="uren-sidebar_categories">
+                                <div class="uren-categories_title">
+                                    <h5>Price</h5>
+                                </div>
+                                <div class="price-filter">
+                                    <div id="slider-range"></div>
+                                    <div class="price-slider-amount">
+                                        <div class="label-input">
+                                            <label>price : </label>
+                                            <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                        </div>
+                                        <!-- <button type="button">Filter</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Color Start -->
+                            <div class="uren-sidebar_categories">
+                                <div class="uren-categories_title">
+                                    <h5>Color</h5>
+                                </div>
+                                <ul class="sidebar-checkbox_list">
+                                    <li>
+                                        <a href="javascript:void(0)">Black <span>(6)</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Color end -->
+
+                            <!--Manufacturers Start-->
+                            <div class="uren-sidebar_categories">
+                                <div class="uren-categories_title">
+                                    <h5>Manufacturers</h5>
+                                </div>
+                                <ul class="sidebar-checkbox_list">
+                                    <li>
+                                        <a href="javascript:void(0)">Sanai <span>(10)</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Manufacturers end-->
+                        </div>
+
+                        <!-- Shop Banner Image -->
+                        <div class="sidebar-banner_area">
+                            <div class="banner-item img-hover_effect">
+                                <a href="javascript:void(0)">
+                                    <img src="~/uren/assets/images/shop/1.jpg" alt="Uren's Shop Banner Image">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Shop Banner Image -->
+                    </div>
+                    <div class="col-lg-9 col-md-7 order-1 float-right">
+                        <div class="shop-toolbar">
+                            <div class="product-view-mode">
+                                <a class="active grid-4" data-target="gridview-4" data-toggle="tooltip" data-placement="top" title="NetWork"><i class="fas fa-th-large"></i></a>
+                                <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List"><i class="fa fa-th-list"></i></a>
+                            </div>
+                            <div class="product-item-selection_area">
+
+                                <!-- Short By start-->
+                                <div class="product-short">
+                                    <label class="select-label">Short By:</label>
+                                    <select class="myniceselect nice-select">
+                                        <option value="1">Default</option>
+                                        <option value="2">Name, A to Z</option>
+                                        <option value="3">Name, Z to A</option>
+                                        <option value="4">Price, low to high</option>
+                                        <option value="5">Price, high to low</option>
+                                        <option value="5">Rating (Highest)</option>
+                                        <option value="5">Rating (Lowest)</option>
+                                    </select>
+                                </div>
+                                <!-- Short By end--> 
+
+                                <!-- Show start-->
+                                <div class="product-showing">
+                                    <label class="select-label">Show:</label>
+                                    <select class="myniceselect short-select nice-select">
+                                        <option value="1">20</option>
+                                        <option value="1">40</option>
+                                        <option value="1">60</option>
+                                    </select>
+                                </div>
+                                <!-- Show end-->
+
+                            </div>
+                        </div>
+                        <div class="shop-product-wrap grid gridview-4 img-hover-effect_area row">
+                        @foreach (var tool in Model.lstTbTools)
+                        {
+                                <div class="col-lg-4 tool-item" data-categoryid="@tool.CategoryId">
+                                @foreach (var imgTool in tool._TbImageTool)
+                                {
+                                            <!-- products as network start -->
+                                            <div class="product-slide_item">
+                                                <div class="inner-slide">
+                                                    <div class="single-product">
+
+                                                        <!-- Product Image start -->
+                                                            <div class="product-img">
+                                                                <a href="single-product.html">
+                                                                    <img class="primary-img" src="~/uren/assets/images/product/large-size/@imgTool.ToolProductImgPrimary" alt="Uren's Product Image">
+                                                                        <img class="secondary-img" src="~/uren/assets/images/product/large-size/@imgTool.ToolProductImgSecondry" alt="Uren's Product Image">
+                                                                </a>
+                                                                <div class="sticker">
+                                                                    <span class="sticker">@tool.ToolSticker</span>
+                                                                </div>
+                                                                <div class="add-actions">
+                                                                    <ul>
+                                                                        <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i
+                                                                    class="ion-bag"></i></a>
+                                                                        </li>
+                                                                        <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
+                                                                    class="ion-android-favorite-outline"></i></a>
+                                                                        </li>
+                                                                        <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
+                                                                    class="ion-android-options"></i></a>
+                                                                        </li>
+                                                                        <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
+                                                                    class="ion-android-open"></i></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Product Image end -->
+
+                                                                <!-- Product info start -->
+                                                            <div class="product-content">
+                                                                <div class="product-desc_info">
+                                                                    <div class="rating-box">
+                                                                        <ul>
+                                                                            <li><i class="ion-android-star"></i></li>
+                                                                            <li><i class="ion-android-star"></i></li>
+                                                                            <li><i class="ion-android-star"></i></li>
+                                                                            <li class="silver-color"><i class="ion-android-star"></i></li>
+                                                                            <li class="silver-color"><i class="ion-android-star"></i> </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <h6><a class="product-name" href="single-product.html">@tool.ToolName</a></h6>
+                                                                    <div class="price-box">
+                                                                        <span class="new-price">@tool.ToolProductPrice</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Product info end -->
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- products as network end -->
+
+                                            <!-- products as List start -->
+                                            <div class="list-slide_item">
+                                                <div class="single-product">
+                                                    <div class="product-img">
+                                                        <a href="single-product.html">
+                                                            <img class="primary-img" src="~/uren/assets/images/product/large-size/@imgTool.ToolProductImgPrimary" alt="Uren's Product Image">
+                                                            <img class="secondary-img" src="~/uren/assets/images/product/large-size/@imgTool.ToolProductImgSecondry" alt="Uren's Product Image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <div class="product-desc_info">
+                                                            <div class="rating-box">
+                                                                <ul>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li class="silver-color"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                    <li class="silver-color"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h6><a class="product-name" href="single-product.html">@tool.ToolName</a></h6>
+                                                            <div class="price-box">
+                                                                <span class="new-price">@tool.ToolProductPrice</span>
+                                                            </div>
+                                                            <div class="product-short_desc">
+                                                                <p>@tool.ToolDescription</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="add-actions">
+                                                            <ul>
+                                                                <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                                </li>
+                                                                <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
+                                                            class="ion-android-favorite-outline"></i></a>
+                                                                </li>
+                                                                <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
+                                                            class="ion-android-options"></i></a>
+                                                                </li>
+                                                                <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
+                                                            class="ion-android-open"></i></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- products as List end -->
+                                }
+                                </div>
+                        }
+                        </div>
+
+                       <!-- Number of Badge start -->
+                       <div class="row">
+                            <div class="col-lg-12">
+                                <div class="uren-paginatoin-area">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <ul class="uren-pagination-box primary-color">
+                                            @for (int i = 1; i <= Math.Ceiling((double)Model.lstTbTools.Count / 10); i++)
+                                            {
+                                                        <li class="@(i == 1 ? "active" : "")"><a href="javascript:void(0)">@i</a></li>
+                                            }
+                                                <li><a class="Next" href="javascript:void(0)">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Number of Badge end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Scripts
+    {
+        <script>
+            $(document).ready(function () {
+                $('.category-link').on('click', function () {
+                    var categoryId = $(this).data('categoryid');
+                    var toolItems = $('.tool-item');
+
+                    // إخفاء جميع الأدوات
+                    toolItems.hide();
+
+                    // إظهار الأدوات المرتبطة بالفئة المحددة
+                    toolItems.filter('[data-categoryid="' + categoryId + '"]').show();
+                });
+            });
+        </script>
+}

@@ -1,7 +1,5 @@
-﻿@model LayoutViewModel
-@{
-    var indexAboutViewModel = Model.IndexAboutViewModel;
-}
+﻿@model IndexAboutViewModel
+
 
 <!-- Begin Uren's Breadcrumb Area -->
 <div class="breadcrumb-area">
@@ -12,26 +10,26 @@
 <!-- Begin Uren's About Us Area -->
 <div class="about-us-area">
     <div class="container-fluid">
-        @foreach (var about in indexAboutViewModel.lstTbAbouts)
+        @foreach (var about in Model.lstTbAbouts)
         {
-            <div class="row">
-                <div class="col-lg-6 col-md-5">
-                    <div class="overview-img text-center img-hover_effect">
-                        <a href="#">
-                            <img class="img-full" src="~/uren/assets/images/about-us/@about.AboutDescriptionImg" alt="Uren's About Us Image">
-                        </a>
+                <div class="row">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="overview-img text-center img-hover_effect">
+                            <a href="#">
+                                <img class="img-full" src="~/uren/assets/images/about-us/@about.AboutDescriptionImg" alt="Uren's About Us Image">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-7 d-flex align-items-center">
-                    <div class="overview-content">
-                        <h2>@Resources.WelcomeTo <span>@about.AboutTitelDescription</span> @Resources.Store</h2>
-                        <p class="short_desc">@about.AboutDescription</p>
-                        <div class="uren-about-us_btn-area">
-                            <a class="about-us_btn" href="shop-left-sidebar.html">@Resources.ShopNow</a>
+                    <div class="col-lg-6 col-md-7 d-flex align-items-center">
+                        <div class="overview-content">
+                            <h2>@Resources.WelcomeTo <span>@about.AboutTitelDescription</span> @Resources.Store</h2>
+                            <p class="short_desc">@about.AboutDescription</p>
+                            <div class="uren-about-us_btn-area">
+                                <a class="about-us_btn" href="shop-left-sidebar.html">@Resources.ShopNow</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         }
     </div>
 </div>
@@ -40,52 +38,52 @@
 <div class="project-count-area">
     <div class="container-fluid">
         <div class="row">
-            @foreach (var about in indexAboutViewModel.lstTbAbouts)
+            @foreach (var about in Model.lstTbAbouts)
             {
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-ios-briefcase-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">@about.AboutProjectDone</h2>
-                            <span>@Resources.ProjectDone</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-ios-wineglass-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">@about.AboutAwardsWinned</h2>
-                            <span>@Resources.AwardsWinned</span>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-count text-center">
+                            <div class="count-icon">
+                                <span class="ion-ios-briefcase-outline"></span>
+                            </div>
+                            <div class="count-title">
+                                <h2 class="count">@about.AboutProjectDone</h2>
+                                <span>@Resources.ProjectDone</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-ios-lightbulb-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">@about.AboutHoursWorked</h2>
-                            <span>@Resources.HoursWorked</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-happy-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">@about.AboutHappyCustomer</h2>
-                            <span>@Resources.HappyCustomer</span>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-count text-center">
+                            <div class="count-icon">
+                                <span class="ion-ios-wineglass-outline"></span>
+                            </div>
+                            <div class="count-title">
+                                <h2 class="count">@about.AboutAwardsWinned</h2>
+                                <span>@Resources.AwardsWinned</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-count text-center">
+                            <div class="count-icon">
+                                <span class="ion-ios-lightbulb-outline"></span>
+                            </div>
+                            <div class="count-title">
+                                <h2 class="count">@about.AboutHoursWorked</h2>
+                                <span>@Resources.HoursWorked</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-count text-center">
+                            <div class="count-icon">
+                                <span class="ion-happy-outline"></span>
+                            </div>
+                            <div class="count-title">
+                                <h2 class="count">@about.AboutHappyCustomer</h2>
+                                <span>@Resources.HappyCustomer</span>
+                            </div>
+                        </div>
+                    </div>
             }
         </div>
     </div>
@@ -94,16 +92,16 @@
 <!-- Begin Uren's Team Area -->
 <div class="team-area">
     <div class="container-fluid">
-        @foreach (var about in indexAboutViewModel.lstTbAbouts)
+        @foreach (var about in Model.lstTbAbouts)
         {
-            <div class="row">
-                <div class="col-12">
-                    <div class="section_title-2">
-                        <h3>@Resources.OurTeam</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title-2">
+                            <h3>@Resources.OurTeam</h3>
+                        </div>
                     </div>
-                </div>
-            </div> <!-- section title end -->
-            <div class="row">
+                </div> <!-- section title end -->
+                <div class="row">
                 @*@foreach (var team in about._TbTeam)
                 {
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -122,8 +120,8 @@
                             </div>
 
                         </div>*@
-                    </div> <!-- end single team member -->
-                }
+                        </div> <!-- end single team member -->
+        }
             </div>
         }
     </div>

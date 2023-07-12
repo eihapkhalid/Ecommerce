@@ -1,20 +1,18 @@
 ﻿using Ecommerce.DataAccess.Repository.IRepository;
 using Ecommerce.DataAccess.ViewModels;
-using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using System.Diagnostics;
 
 namespace Ecommerce.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class HomeController : Controller
+    public class ShopController : Controller
     {
         #region Dependancy Injections
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMemoryCache _cache;
-        public HomeController(IUnitOfWork unitOfWork, IMemoryCache cache, ILogger<HomeController> logger)
+        public ShopController(IUnitOfWork unitOfWork, IMemoryCache cache, ILogger<HomeController> logger)
         {
             _unitOfWork = unitOfWork;
             _cache = cache;
@@ -57,21 +55,6 @@ namespace Ecommerce.Areas.Customer.Controllers
             }
 
             return viewModel;
-        }
-        #endregion
-
-        #region Privacy
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        #endregion
-
-        #region Error
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         #endregion
     }
