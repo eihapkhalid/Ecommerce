@@ -1,0 +1,181 @@
+﻿@model LayoutViewModel
+<div class="header-middle_area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-2 col-md-3 col-sm-5">
+                <div class="header-logo_area">
+                    <a href="index.html">
+                        <img src="~/uren/assets/images/menu/logo/1.png" alt="Uren's Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 d-none d-lg-block">
+                <div class="hm-form_area">
+                    <!-- All Categories start & search category start -->
+                    <form action="#" class="hm-searchbox">
+                        <div class="select-search-category-wrapper">
+                            <span class="category-arrow">|</span>
+                            <select class="nice-select select-search-category">
+                                <option value="0">@Resources.AllCategories</option>
+                                @foreach (var category in Model.lstTbCategorys)
+                                {
+                                    var categoryTools = Model.lstTbTools.Where(tool => tool.CategoryId == category.CategoryId).ToList();
+                                    if (categoryTools.Count > 0)
+                                    {
+                                        <option value="@category.CategoryId">@category.CategoryName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <input type="text" placeholder="@Resources.EnterTextsearch">
+                        <button class="header-search_btn" type="submit"><i class="ion-ios-search-strong"><span>@Resources.Search</span></i></button>
+                    </form>
+                    <!-- All Categories start & search category end -->
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-9 col-sm-7">
+                <div class="header-right_area">
+                    <ul>
+                        <li class="mobile-menu_wrap d-flex d-lg-none">
+                            <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
+                                <i class="ion-navicon"></i>
+                            </a>
+                        </li>
+                        <!-- Cart start-->
+                        <li class="minicart-wrap">
+                            <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                <div class="minicart-count_area">
+                                    <span class="item-count">3</span>
+                                    <i class="ion-bag"></i>
+                                </div>
+                                <div class="minicart-front_text">
+                                    <span>@Resources.Cart</span>
+                                    <span class="total-price">462.4</span>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Cart End-->
+                        <li class="contact-us_wrap">
+                            @foreach (var info in Model.lstTbCompanyInformations)
+                            {
+                                <a href="tel://@info.CompanyInformationPhone"><i class="ion-android-call"></i>@info.CompanyInformationPhone</a>
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-top_area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="custom-category_col col-12">
+                <div class="category-menu category-menu-hidden">
+                    <div class="category-heading">
+                        <h2 class="categories-toggle">
+                            <span>@Resources.ShopBy</span>
+                            <span>@Resources.Department</span>
+                        </h2>
+                    </div>
+                    <!-- department start-->
+                    <div id="cate-toggle" class="category-menu-list">
+                        <ul>
+                            @foreach (var depart in Model.lstTbDepartments)
+                            {
+                                var categories = Model.lstTbCategorys.Where(cat => cat.DepartmentId == depart.DepartmentId).ToList();
+                                if (categories.Count > 0)
+                                {
+                                    <li class="right-menu">
+                                        <a href="shop-left-sidebar.html">@depart.DepartmentName f</a>
+                                        <ul class="cat-mega-menu">
+                                            @foreach (var category in categories)
+                                            {
+                                                <li class="right-menu cat-mega-title">
+                                                    <a href="shop-left-sidebar.html">@category.CategoryName</a>
+                                                    <ul>
+                                                        @foreach (var tool in Model.lstTbTools)
+                                                        {
+                                                            if (tool.CategoryId == category.CategoryId)
+                                                            {
+                                                                <li><a href="shop-left-sidebar.html">@tool.ToolName</a></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                            }
+                            <li>
+                                <a class="rx-default">@Resources.MoreCategories</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- department end-->
+
+                </div>
+            </div>
+
+            <!-- main menu start-->
+            <div class="custom-menu_col col-12 d-none d-lg-block">
+                <div class="main-menu_area position-relative">
+                    <nav class="main-nav">
+                        <ul class="d-flex justify-content-between">
+                            <li><a asp-area="Customer" asp-controller="Home" asp-action="Index">@Resources.Home</a></li>
+                            <li><a asp-area="Customer" asp-controller="Shop" asp-action="Index">@Resources.Shop</a></li>
+                            <li><a asp-area="Customer" asp-controller="About" asp-action="Index">@Resources.AboutUs</a></li>
+                            <li style="margin-right: 25px;"><a asp-controller="Tell" asp-action="Index">@Resources.Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- main menu end-->
+
+            <div class="custom-setting_col col-12 d-none d-lg-block">
+                <div class="ht-right_area">
+                    <div class="ht-menu">
+                        <ul>
+                            <!--Currency start-->
+                            <li>
+                                <a href="javascript:void(0)"><i class="fa fa-chevron-down"></i><span>@Resources.Currency</span></a>
+                                <ul class="ht-dropdown ht-currency">
+                                    @foreach (var Currency in Model.lstTbCurrencys)
+                                    {
+                                        <li><a href="javascript:void(0)">@Currency.CurrencyName</a></li>
+                                    }
+                                </ul>
+                            </li>
+                            <!--Currency end-->
+                            <!--Language start-->
+                            <li>
+                                <a href="javascript:void(0)"><i class="fa fa-chevron-down"></i> <span>@Resources.Language</span></a>
+                                <ul class="ht-dropdown">
+                                    @foreach (var lang in Model.lstTbLanguages)
+                                    {
+                                        <li class="active">
+                                            <a href="javascript:void(0)"><img src="~/uren/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">@lang.LanguageName</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                            <!--Language end-->
+                            <!--My Account start-->
+                            <li>
+                                <a href="my-account.html"></span> <i class="fa fa-chevron-down"></i><span>@Resources.MyAccount</span></a>
+                                <ul class="ht-dropdown ht-my_account">
+                                    <li><a href="javascript:void(0)">@Resources.Register</a></li>
+                                    <li class="active"><a href="javascript:void(0)">@Resources.Login</a></li>
+                                </ul>
+                            </li>
+                            <!--My Account end-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
