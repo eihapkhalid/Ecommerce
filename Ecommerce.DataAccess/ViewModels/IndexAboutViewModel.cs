@@ -10,6 +10,5 @@ namespace Ecommerce.DataAccess.ViewModels
     public class IndexAboutViewModel
     {
         public List<TbAbout> lstTbAbouts { get; set; }
-        public LayoutViewModel Layout { get; set; }
     }
 }
