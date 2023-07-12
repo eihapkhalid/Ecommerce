@@ -1,0 +1,125 @@
+﻿@model LayoutViewModel
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="footer-widgets_info">
+
+                <!-- Logo company -->
+                <div class="footer-widgets_logo">
+                    <a href="#">
+                        <img src="~/uren/assets/images/menu/logo/1.png" alt="Uren's Footer Logo">
+                    </a>
+                </div>
+                <!-- Logo company -->
+                @foreach (var descrpt in Model.lstTbCompanyInformations)
+                {
+                    <!-- descption company -->
+                    <div class="widget-short_desc">
+                        <p>@descrpt.CompanyInformationDescription</p>
+                    </div>
+                    <!-- descption company -->
+                    <!-- company info start-->
+                    <div class="widgets-essential_stuff">
+                        <ul>
+                            <!--Address-->
+                            <li class="uren-address"><span>@Resources.Address </span>@descrpt.CompanyInformationAddress</li>
+                            <!--call-->
+                            <li class="uren-phone text-right"><span>@Resources.ContactUs</span> <a href="tel://@descrpt.CompanyInformationPhone">@descrpt.CompanyInformationPhone</a></li>
+                            <!--Email-->
+                            <li class="uren-email"><span>@Resources.Email</span> <a href="@descrpt.CompanyInformationEmail">@descrpt.CompanyInformationEmail</a></li>
+                        </ul>
+                    </div>
+                    <!-- company info end-->
+                    <!--link start
+                    <div class="uren-social_link">
+                        <ul>
+                            <li class="facebook">
+                                <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="twitter">
+                                <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </li>
+                            <li class="google-plus">
+                                <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
+                                    <i class="fab fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="instagram">
+                                <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    --link end-->
+                }
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="footer-widgets_area">
+                <div class="row">
+
+                    <!--INFORMATION start-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widgets_title">
+                            <h3>@Resources.Information</h3>
+                        </div>
+                        <div class="footer-widgets">
+                            <ul>
+                                <li><a href="javascript:void(0)">@Resources.AboutUs</a></li>
+                                <li><a href="javascript:void(0)">@Resources.PrivacyPolicy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--INFORMATION end-->
+                    <!--Customer Service start-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widgets_title">
+                            <h3>@Resources.CustomerService</h3>
+                        </div>
+                        <div class="footer-widgets">
+                            <ul>
+                                <li><a href="javascript:void(0)">@Resources.ContactUs</a></li>
+                                <li><a href="javascript:void(0)">@Resources.SiteMap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Customer Service end-->
+                    <!--Extras start-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widgets_title">
+                            <h3>@Resources.Extras</h3>
+                        </div>
+                        <div class="footer-widgets">
+                            <ul>
+                                <li><a href="javascript:void(0)">@Resources.AboutUs</a></li>
+                                <li><a href="javascript:void(0)">@Resources.PrivacyPolicy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Extras end-->
+                    <!--My Account start-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widgets_title">
+                            <h3>@Resources.MyAccount</h3>
+                        </div>
+                        <div class="footer-widgets">
+                            <ul>
+                                <li><a href="javascript:void(0)">@Resources.MyAccount</a></li>
+                                <li><a href="javascript:void(0)">@Resources.OrderHistory</a></li>
+                                <li><a href="javascript:void(0)">@Resources.WishList</a></li>
+                                <li><a href="javascript:void(0)">@Resources.Newsletter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--My Account end-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
