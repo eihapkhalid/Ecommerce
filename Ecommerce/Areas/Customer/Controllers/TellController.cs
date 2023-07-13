@@ -2,6 +2,7 @@
 using Ecommerce.DataAccess.ViewModels;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Ecommerce.Areas.Customer.Controllers
@@ -36,14 +37,23 @@ namespace Ecommerce.Areas.Customer.Controllers
         public IActionResult Save(IndexTellViewModel viewModel)
         {
             viewModel.InpTbTellUs.TellCurrentState = 1;
-            /*if (!ModelState.IsValid)
+            var fieldValidationState = ModelState.GetFieldValidationState("InpTbTellUs");
+            if (fieldValidationState != ModelValidationState.Valid)
             {
                 return View("Index", viewModel);
-            }*/
-
+            }
+            // التأكد ان البيانات تمر بطريقة صحيحة:
+            Console.WriteLine("TellName: " + viewModel.InpTbTellUs.TellName);
+            Console.WriteLine("TellEmail: " + viewModel.InpTbTellUs.TellEmail);
+            Console.WriteLine("TellSubject: " + viewModel.InpTbTellUs.TellSubject);
+            Console.WriteLine("TellMessage: " + viewModel.InpTbTellUs.TellMessage);
+            //استدعاء الدالة update من اجل اخذ بيانات الكائن او تحديثها
+            _unitOfWork.TbTellUs.Update(viewModel.InpTbTellUs);
+            //حفظ بيانات الكائن في قاعدة البيانات
             _unitOfWork.Save();
             return RedirectToAction("Index");
         }
+
         #endregion
 
 
