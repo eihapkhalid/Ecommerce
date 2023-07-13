@@ -56,8 +56,6 @@ namespace Ecommerce.Areas.Customer.Controllers
 
         #endregion
 
-
-
         #region GetCachedIndexViewModel
         private IndexTellViewModel GetCachedIndexTellViewModel()
         {

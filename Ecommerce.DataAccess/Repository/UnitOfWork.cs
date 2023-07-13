@@ -11,6 +11,7 @@ namespace Ecommerce.DataAccess.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
+        #region dependency injection
         private ApplicationDbContext _db;
         public IAboutRepository TbAbout { get; private set; }
         public ICategoryRepository TbCategory { get; private set; }
@@ -36,7 +37,9 @@ namespace Ecommerce.DataAccess.Repository
             TbTool = new ToolRepository(_db);
             TbTellUs = new TellUsRepository(_db);
         }
+        #endregion
 
+        #region Save
         public void Save()
         {
             try
@@ -57,7 +60,8 @@ namespace Ecommerce.DataAccess.Repository
                 Console.WriteLine("An error occurred while saving data to the database: " + ex.Message);
                 // يمكنك التعامل مع الاستثناء هنا، مثلاً طباعة رسالة الخطأ أو تسجيلها
             }
-        }
+        } 
+        #endregion
 
     }
 }
