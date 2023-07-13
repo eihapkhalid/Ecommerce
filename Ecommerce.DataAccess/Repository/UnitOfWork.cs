@@ -39,7 +39,25 @@ namespace Ecommerce.DataAccess.Repository
 
         public void Save()
         {
-            _db.SaveChanges();
+            try
+            {
+                int savedChanges = _db.SaveChanges();
+                if (savedChanges > 0)
+                {
+                    Console.WriteLine("Data saved successfully. Number of affected rows: " + savedChanges);
+
+                }
+                else
+                {
+                    Console.WriteLine("No data changes to save.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while saving data to the database: " + ex.Message);
+                // يمكنك التعامل مع الاستثناء هنا، مثلاً طباعة رسالة الخطأ أو تسجيلها
+            }
         }
+
     }
 }
