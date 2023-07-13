@@ -30,7 +30,6 @@
                             <h3 class="contact-page-title">@Resources.TellUsYourMessage</h3>
                             <div class="contact-form">
                                 <form method="post"enctype="multipart/form-data" id="contact-form"action="@Url.Action("Save", "Tell")">
-                                    <input asp-for="@Model.InpTbTellUs.TellId" hidden />
                                     <div class="form-group">
                                         <label>@Resources.YourName <span class="required">*</span></label>
                                         <input asp-for="@Model.InpTbTellUs.TellName" type="text" class="form-control" />
