@@ -1,5 +1,5 @@
 ﻿using Ecommerce.DataAccess.Repository.IRepository;
-using Ecommerce.DataAccess.ViewModels;
+using Ecommerce.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Areas.Customer.ViewComponents

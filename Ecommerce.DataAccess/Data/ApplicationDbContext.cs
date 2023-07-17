@@ -1,10 +1,5 @@
 ﻿using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ecommerce.DataAccess.Data
 {
@@ -48,12 +43,14 @@ namespace Ecommerce.DataAccess.Data
             modelBuilder.Entity<TbDepartment>()
                      .HasMany(c => c._TbCategory)
                      .WithOne(b => b._TbDepartment)
-                     .HasForeignKey(b => b.DepartmentId);
+                     .HasForeignKey(b => b.DepartmentId)
+                     .IsRequired(); // إضافة هذا السطر لتعيين إجبارية العلاقة
 
             modelBuilder.Entity<TbCategory>()
                      .HasMany(c => c._TbTool)
                      .WithOne(b => b._TbCategory)
-                     .HasForeignKey(b => b.CategoryId);
+                     .HasForeignKey(b => b.CategoryId)
+                     .IsRequired();
 
             modelBuilder.Entity<TbTool>()
                      .HasMany(c => c._TbImageTool)
@@ -74,10 +71,10 @@ namespace Ecommerce.DataAccess.Data
 
             modelBuilder.Entity<TbCategory>().HasData(
                     new TbCategory { CategoryId = 1, CategoryName = "Action", CategoryCurrentState = 1, DepartmentId = 1 },
-                    new TbCategory { CategoryId = 2, CategoryName = "SciFi", CategoryCurrentState = 2, DepartmentId = 1 },
-                    new TbCategory { CategoryId = 3, CategoryName = "History", CategoryCurrentState = 3, DepartmentId = 2 },
-                    new TbCategory { CategoryId = 4, CategoryName = "Comedy", CategoryCurrentState = 4, DepartmentId = 2 },
-                    new TbCategory { CategoryId = 5, CategoryName = "Drama", CategoryCurrentState = 5, DepartmentId = 3 });
+                    new TbCategory { CategoryId = 2, CategoryName = "SciFi", CategoryCurrentState = 1, DepartmentId = 1 },
+                    new TbCategory { CategoryId = 3, CategoryName = "History", CategoryCurrentState = 1, DepartmentId = 2 },
+                    new TbCategory { CategoryId = 4, CategoryName = "Comedy", CategoryCurrentState = 1, DepartmentId = 2 },
+                    new TbCategory { CategoryId = 5, CategoryName = "Drama", CategoryCurrentState = 1, DepartmentId = 3 });
 
             modelBuilder.Entity<TbTool>().HasData(
                     new TbTool { ToolId = 1, ToolName = "Hammer", ToolCurrentState = 1, ToolSticker = "A1", ToolDescription = "A heavy-duty hammer for construction work", ToolProductPrice = 10.99m, CategoryId = 1 },

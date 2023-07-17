@@ -1,5 +1,5 @@
 ﻿using Ecommerce.DataAccess.Repository.IRepository;
-using Ecommerce.DataAccess.ViewModels;
+using Ecommerce.Models.ViewModels;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
