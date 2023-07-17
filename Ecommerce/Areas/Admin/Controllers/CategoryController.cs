@@ -110,7 +110,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                 }
 
                 _unitOfWork.Save();
-                TempData["success"] = "Product created/updated successfully";
+                TempData["success"] = "Category created/updated successfully";
                 return RedirectToAction("Index");
             }
             else
