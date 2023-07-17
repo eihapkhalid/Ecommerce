@@ -1,0 +1,63 @@
+﻿@model CategoryViewModel
+
+@if (TempData["errorMessages"] != null)
+{
+        <div class="alert alert-danger">
+            <ul>
+            @foreach (var errorMessage in (List<string>)TempData["errorMessages"])
+            {
+                        <li>@errorMessage</li>
+            }
+            </ul>
+        </div>
+}
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Edit Category</h2>
+            </div>
+        </div>
+    </div>
+    <form method="post"  class="row" enctype="multipart/form-data">
+        <input asp-for="inpTbCategory.CategoryId" hidden />
+
+        <div class="border p-3 mt-4">
+            <div class="form-floating py-2 col-12">
+                <input asp-for="inpTbCategory.CategoryName" class="form-control border-0 shadow" />
+                <label asp-for="inpTbCategory.CategoryName" class="ms-2"></label>
+                <span asp-validation-for="inpTbCategory.CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="inpTbCategory.CategoryCurrentState" class="form-control border-0 shadow" />
+                <label asp-for="inpTbCategory.CategoryCurrentState" class="ms-2"></label>
+                <span asp-validation-for="inpTbCategory.CategoryCurrentState" class="text-danger"></span>
+            </div>
+
+             <div class="form-floating py-2 col-12">
+                <select asp-for="@Model.inpTbCategory.DepartmentId" asp-items="@Model.LisTbDepartment" class="form-select border-0 shadow">
+                    <option disabled selected>--Select Department--</option>
+                </select>
+                <label asp-for="inpTbCategory.DepartmentId" class="ms-2"></label>
+                <span asp-validation-for="inpTbCategory.DepartmentId" class="text-danger"></span>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-controller="Category" asp-action="Index" class="btn btn-secondary border form-control">
+                        Back to List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+        <partial name="_ValidationScriptsPartial" />
+}
+
