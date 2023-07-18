@@ -62,19 +62,22 @@
                         </li>
                         @*-@if (User.IsInRole(SD.Role_Admin))
                         {*@
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Content Managment
-                                    </a>
-                                    <ul class="dropdown-menu">
+                            <div class="category-menu category-menu-hidden">
+                                <div class="category-heading">
+                                    <h2 class="categories-toggle">
+                                        <span>Mangement</span>
+                                    </h2>
+                                </div>
+                                <div id="cate-toggle" class="category-menu-list" style="display: none;">
+                                    <ul>
+                                         <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Department" asp-action="Index">Department</a>
+                                        </li>
                                         <li class="nav-item">
                                             <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
+                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Tool" asp-action="Index">Tool</a>
                                         </li>
                                         <li><hr class="dropdown-divider"></li>
                                         <li class="nav-item">
@@ -83,9 +86,10 @@
                                          <li class="nav-item">
                                             <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
                                         </li>
-
                                     </ul>
-                                </li>
+                                </div>
+                            </div>
+
                         @*}*@
 
 
@@ -114,6 +118,7 @@
         </div>
     </footer>
  <!-- Footer Area End Here -->
+
 
         <!-- JS
         ============================================ -->
@@ -157,6 +162,15 @@
         -->
         <!-- Main JS -->
         <script src="~/uren/assets/js/main.js"></script>
+         <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

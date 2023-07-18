@@ -11,11 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Views\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Resources\Resources.resx" />
     <None Include="wwwroot\uren\assets\fonts\fa-brands-400.svg" />
     <None Include="wwwroot\uren\assets\fonts\fa-brands-400.woff2" />
