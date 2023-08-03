@@ -13,36 +13,36 @@
              <input asp-for="inpTbTool.ToolId" hidden />
              <div class="border p-3 mt-4">
                 @*<div asp-validation-summary="ModelOnly"></div>*@
-                <div class="form-floating py-2 col-12">
+                <div class="form-group">
+                    <label asp-for="inpTbTool.ToolName" ></label>
                     <input asp-for="inpTbTool.ToolName" class="form-control border-0 shadow" />
-                    <label asp-for="inpTbTool.ToolName" class="ms-2"></label>
                     <span asp-validation-for="inpTbTool.ToolName" class="text-danger"></span>
                 </div>
-                <div class="form-floating py-2 col-12">
+                <div class="form-group">
+                    <label asp-for="inpTbTool.ToolProductPrice" ></label>
                     <input asp-for="inpTbTool.ToolProductPrice" class="form-control border-0 shadow" />
-                    <label asp-for="inpTbTool.ToolProductPrice" class="ms-2"></label>
                     <span asp-validation-for="inpTbTool.ToolProductPrice" class="text-danger"></span>
                 </div>
-                <div class="form-floating py-2 col-12">
+                <div class="form-group">
+                    <label asp-for="inpTbTool.ToolCurrentState" ></label>
                     <input asp-for="inpTbTool.ToolCurrentState" class="form-control border-0 shadow" />
-                    <label asp-for="inpTbTool.ToolCurrentState" class="ms-2"></label>
                     <span asp-validation-for="inpTbTool.ToolCurrentState" class="text-danger"></span>
                 </div>
-                <div class="form-floating py-2 col-12">
-                    <textarea asp-for="inpTbTool.ToolDescription" class="form-control border-0 shadow"></textarea>
-                    <label asp-for="inpTbTool.ToolDescription" class="ms-2"></label>
+                <div class="form-group">
+                    <label asp-for="inpTbTool.ToolDescription" ></label>
+                    <textarea asp-for="inpTbTool.ToolDescription" class="form-control" rows="4"></textarea>
                     <span asp-validation-for="inpTbTool.ToolDescription" class="text-danger"></span>
                 </div>
-                <div class="form-floating py-2 col-12">
-                    <textarea asp-for="inpTbTool.ToolSticker" class="form-control border-0 shadow"></textarea>
-                    <label asp-for="inpTbTool.ToolSticker" class="ms-2"></label>
+                <div class="form-group">
+                    <label asp-for="inpTbTool.ToolSticker" ></label>
+                    <textarea asp-for="inpTbTool.ToolSticker" class="form-control" rows="4"></textarea>
                     <span asp-validation-for="inpTbTool.ToolSticker" class="text-danger"></span>
                 </div>
-                <div class="form-floating py-2 col-12">
+                <div class="form-group">
+                    <label asp-for="inpTbTool.CategoryId" ></label>
                     <select asp-for="inpTbTool.CategoryId" asp-items="@Model.LisTbCategory" class="form-select border-0 shadow">
                         <option disabled selected>--Select Tool--</option>
                     </select>
-                    <label asp-for="inpTbTool.CategoryId" class="ms-2"></label>
                     <span asp-validation-for="inpTbTool.CategoryId" class="text-danger"></span>
                 </div>
 
@@ -61,8 +61,3 @@
     </div>
 </div>
 
-@section Scripts{
-    @{
-        <partial name="_ValidationScriptsPartial"/>
-    }
-}
