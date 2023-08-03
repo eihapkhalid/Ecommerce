@@ -1,26 +1,23 @@
 ﻿@model List<TbDepartment>
 
-<div class="card shadow border-0 mt-4">
-    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="text-white py-2">Department List</h2>
-            </div>
-        </div>
+<div class="main-panel">
+    <div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Data table </h3>
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data table</li>
+        </ol>
+        </nav>
     </div>
-    <div class="card-body p-4">
-        <div class="row pb-3">
-            <div class="col-6">
-            </div>
-            <div class="col-6 text-end">
-                <a asp-controller="Department" asp-action="Create" class="btn btn-primary">
-                    <i class="bi bi-plus-circle"></i>  Create New Department
-                </a>
-            </div>
-        </div>
-
-        <table class="table table-bordered table-striped">
-            <thead>
+    <div class="card">
+        <div class="card-body">
+        <h4 class="card-title">Data table</h4>
+        <div class="row">
+            <div class="col-12">
+            <table id="order-listing" class="table">
+                <thead>
                 <tr>
                     <th>
                         Department Name
@@ -30,29 +27,54 @@
                     </th>
                     <th></th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 @foreach (var obj in Model.OrderBy(u => u.DepartmentId))
                 {
-                        <tr>
-                            <td>@obj.DepartmentName</td>
-                            <td>
-                            @obj.DepartmentCurrentState
-                            </td>
-                            <td>
-                                <div class="w-75 btn-group" role="group">
-                                    <a asp-controller="Department" asp-action="Edit" asp-route-department_id="@obj.DepartmentId" class="btn btn-primary mx-2">
-                                        <i class="bi bi-pencil-square"></i> Edit
-                                    </a>
-                                    <a asp-controller="Department" asp-action="Delete" asp-route-department_id="@obj.DepartmentId" class="btn btn-danger mx-2">
-                                        <i class="bi bi-trash-fill"></i> Delete
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>@obj.DepartmentName</td>
+                        <td>
+                                    @obj.DepartmentCurrentState
+                        </td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Department" asp-action="Edit" asp-route-department_id="@obj.DepartmentId" class="btn btn-primary mx-2">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                <a asp-controller="Department" asp-action="Delete" asp-route-department_id="@obj.DepartmentId" class="btn btn-danger mx-2">
+                                    <i class="bi bi-trash-fill"></i> Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
                 }
-            </tbody>
-        </table>
-
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
     </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial -->
 </div>
+<!-- main-panel ends -->
+
+<!-- plugins:js -->
+<script src="../../../assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="../../../assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="../../../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="../../../assets/js/off-canvas.js"></script>
+<script src="../../../assets/js/hoverable-collapse.js"></script>
+<script src="../../../assets/js/misc.js"></script>
+<script src="../../../assets/js/settings.js"></script>
+<script src="../../../assets/js/todolist.js"></script>
+<script src="../../../assets/js/jquery.cookie.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="../../../assets/js/data-table.js"></script>
+<!-- End custom js for this page -->
