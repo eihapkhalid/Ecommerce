@@ -135,8 +135,23 @@
   <data name="AwardsWinned" xml:space="preserve">
     <value>الجوائز</value>
   </data>
+  <data name="BacktoList" xml:space="preserve">
+    <value>الرجوع للقائمة السابقة</value>
+  </data>
   <data name="Cart" xml:space="preserve">
     <value>السلة</value>
+  </data>
+  <data name="CategoryCurrentState" xml:space="preserve">
+    <value>  حالة تصنيف المنتج</value>
+  </data>
+  <data name="CategoryDatatable" xml:space="preserve">
+    <value>قائمة التصنيفات</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>   إسم تصنيف المنتج</value>
+  </data>
+  <data name="CategorysDatatable" xml:space="preserve">
+    <value>قائمة التصنيفات الخاصة بالمنتجات</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>تواصل معنا</value>
@@ -146,6 +161,15 @@
   </data>
   <data name="Contactus24hoursaday" xml:space="preserve">
     <value>تواصل معنا على مدار 24 ساعة في اليوم</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="CreateCategory" xml:space="preserve">
+    <value>إضافة تصنيف جديد</value>
+  </data>
+  <data name="CreateNewCategory" xml:space="preserve">
+    <value>اضافة تصنيف جديد للمنتجات</value>
   </data>
   <data name="Currency" xml:space="preserve">
     <value>العملة</value>
@@ -159,8 +183,23 @@
   <data name="DealOfTheDay" xml:space="preserve">
     <value> صفقة اليوم </value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeleteCategory" xml:space="preserve">
+    <value>حذف تصنيفات المنتجات</value>
+  </data>
   <data name="Department" xml:space="preserve">
     <value>الأقسام الرئيسية</value>
+  </data>
+  <data name="DepartmentId" xml:space="preserve">
+    <value>  معرّف القسم</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="EditCategory" xml:space="preserve">
+    <value>تعديل تصنيف منتج</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>الإيميل</value>
@@ -261,6 +300,9 @@
   <data name="Search" xml:space="preserve">
     <value>بحث</value>
   </data>
+  <data name="SelectDepartment" xml:space="preserve">
+    <value>-- إختر القسم المناسب لهذا التصنيف --</value>
+  </data>
   <data name="send" xml:space="preserve">
     <value>ارسال</value>
   </data>
@@ -296,6 +338,9 @@
   </data>
   <data name="TellUsYourMessage" xml:space="preserve">
     <value>أرسل رسالة</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تحديث بيانات المنتج</value>
   </data>
   <data name="Weensuresecurepayment" xml:space="preserve">
     <value>نحن نضمن دفع آمن</value>

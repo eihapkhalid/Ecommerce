@@ -115,11 +115,56 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الرجوع للقائمة السابقة.
+        /// </summary>
+        public static string BacktoList {
+            get {
+                return ResourceManager.GetString("BacktoList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to السلة.
         /// </summary>
         public static string Cart {
             get {
                 return ResourceManager.GetString("Cart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to   حالة تصنيف المنتج.
+        /// </summary>
+        public static string CategoryCurrentState {
+            get {
+                return ResourceManager.GetString("CategoryCurrentState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة التصنيفات.
+        /// </summary>
+        public static string CategoryDatatable {
+            get {
+                return ResourceManager.GetString("CategoryDatatable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    إسم تصنيف المنتج.
+        /// </summary>
+        public static string CategoryName {
+            get {
+                return ResourceManager.GetString("CategoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة التصنيفات الخاصة بالمنتجات.
+        /// </summary>
+        public static string CategorysDatatable {
+            get {
+                return ResourceManager.GetString("CategorysDatatable", resourceCulture);
             }
         }
         
@@ -147,6 +192,33 @@ namespace Ecommerce.Properties {
         public static string Contactus24hoursaday {
             get {
                 return ResourceManager.GetString("Contactus24hoursaday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافة.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إضافة تصنيف جديد.
+        /// </summary>
+        public static string CreateCategory {
+            get {
+                return ResourceManager.GetString("CreateCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافة تصنيف جديد للمنتجات.
+        /// </summary>
+        public static string CreateNewCategory {
+            get {
+                return ResourceManager.GetString("CreateNewCategory", resourceCulture);
             }
         }
         
@@ -187,11 +259,56 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حذف.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حذف تصنيفات المنتجات.
+        /// </summary>
+        public static string DeleteCategory {
+            get {
+                return ResourceManager.GetString("DeleteCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الأقسام الرئيسية.
         /// </summary>
         public static string Department {
             get {
                 return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to   معرّف القسم.
+        /// </summary>
+        public static string DepartmentId {
+            get {
+                return ResourceManager.GetString("DepartmentId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل تصنيف منتج.
+        /// </summary>
+        public static string EditCategory {
+            get {
+                return ResourceManager.GetString("EditCategory", resourceCulture);
             }
         }
         
@@ -493,6 +610,15 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -- إختر القسم المناسب لهذا التصنيف --.
+        /// </summary>
+        public static string SelectDepartment {
+            get {
+                return ResourceManager.GetString("SelectDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ارسال.
         /// </summary>
         public static string send {
@@ -597,6 +723,15 @@ namespace Ecommerce.Properties {
         public static string TellUsYourMessage {
             get {
                 return ResourceManager.GetString("TellUsYourMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحديث بيانات المنتج.
+        /// </summary>
+        public static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
             }
         }
         
