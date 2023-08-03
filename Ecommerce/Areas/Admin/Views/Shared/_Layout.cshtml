@@ -1,189 +1,4 @@
-﻿@* @using Microsoft.AspNetCore.Http
-@inject IHttpContextAccessor HttpContextAccessor
-*@
-@*
-<!DOCTYPE html>
-<html class="no-js" lang="ar">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Ecomerce</title>
-     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/uren/assets/images/favicon.ico">
-
-    <!-- CSS
-    ============================================ -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/uren/assets/css/vendor/bootstrap.min.css">
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="~/uren/assets/css/vendor/font-awesome.css">
-    <!-- Fontawesome Star -->
-    <link rel="stylesheet" href="~/uren/assets/css/vendor/fontawesome-stars.css">
-    <!-- Ion Icon -->
-    <link rel="stylesheet" href="~/uren/assets/css/vendor/ion-fonts.css">
-    <!-- Slick CSS -->
-    <link rel="stylesheet" href="~/uren/assets/css/plugins/slick.css">
-    <!-- Animation -->
-    <link rel="stylesheet" href="~/uren/assets/css/plugins/animate.css">
-    <!-- jQuery Ui -->
-    <link rel="stylesheet" href="~/uren/assets/css/plugins/jquery-ui.min.css">
-    <!-- Lightgallery -->
-    <link rel="stylesheet" href="~/uren/assets/css/plugins/lightgallery.min.css">
-    <!-- Nice Select -->
-    <link rel="stylesheet" href="~/uren/assets/css/plugins/nice-select.css">
-
-    <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
-    <!--
-    <script src="~/uren/assets/js/vendor/vendor.min.js"></script>
-    <script src="~/uren/assets/js/plugins/plugins.min.js"></script>
-    -->
-    <!-- Main Style CSS (Please use minify version for better website load performance) -->
-    <link rel="stylesheet" href="~/uren/assets/css/style.css">
-    <!--<link rel="stylesheet" href="~/uren/assets/css/style.min.css">-->
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="/images/book.png" style="width:30px" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index">Manage Order</a>
-                        </li>
-                        @*-@if (User.IsInRole(SD.Role_Admin))
-                        {@
-                            <div class="category-menu category-menu-hidden">
-                                <div class="category-heading">
-                                    <h2 class="categories-toggle">
-                                        <span>Mangement</span>
-                                    </h2>
-                                </div>
-                                <div id="cate-toggle" class="category-menu-list" style="display: none;">
-                                    <ul>
-                                         <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Department" asp-action="Index">Department</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Tool" asp-action="Index">Tool</a>
-                                        </li>
-                                        <li><hr class="dropdown-divider"></li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create User</a>
-                                        </li>
-                                         <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        @*}@
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="Customer" asp-controller="Cart" asp-action="Index">
-                                @*  @await Component.InvokeAsync("ShoppingCart")@
-                                </a>
-                            </li>
-
-                    </ul>
-                    @  <partial name="_LoginPartial" />@
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @*<partial name="_Notification" />@
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer bg-primary text-muted ">
-        <div class="text-center">
-            Made with <i class="bi bi-heart-fill"></i> by DotNetMastery
-        </div>
-    </footer>
- <!-- Footer Area End Here -->
-
-
-        <!-- JS
-        ============================================ -->
-        <!-- jQuery JS -->
-        <script src="~/uren/assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <!-- Modernizer JS -->
-        <script src="~/uren/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-        <!-- Popper JS -->
-        <script src="~/uren/assets/js/vendor/popper.min.js"></script>
-        <!-- Bootstrap JS -->
-        <script src="~/uren/assets/js/vendor/bootstrap.min.js"></script>
-
-        <!-- Slick Slider JS -->
-        <script src="~/uren/assets/js/plugins/slick.min.js"></script>
-        <!-- Barrating JS -->
-        <script src="~/uren/assets/js/plugins/jquery.barrating.min.js"></script>
-        <!-- Counterup JS -->
-        <script src="~/uren/assets/js/plugins/jquery.counterup.js"></script>
-        <!-- Nice Select JS -->
-        <script src="~/uren/assets/js/plugins/jquery.nice-select.js"></script>
-        <!-- Sticky Sidebar JS -->
-        <script src="~/uren/assets/js/plugins/jquery.sticky-sidebar.js"></script>
-        <!-- Jquery-ui JS -->
-        <script src="~/uren/assets/js/plugins/jquery-ui.min.js"></script>
-        <script src="~/uren/assets/js/plugins/jquery.ui.touch-punch.min.js"></script>
-        <!-- Lightgallery JS -->
-        <script src="~/uren/assets/js/plugins/lightgallery.min.js"></script>
-        <!-- Scroll Top JS -->
-        <script src="~/uren/assets/js/plugins/scroll-top.js"></script>
-        <!-- Theia Sticky Sidebar JS -->
-        <script src="~/uren/assets/js/plugins/theia-sticky-sidebar.min.js"></script>
-        <!-- Waypoints JS -->
-        <script src="~/uren/assets/js/plugins/waypoints.min.js"></script>
-        <!-- jQuery Zoom JS -->
-        <script src="~/uren/assets/js/plugins/jquery.zoom.min.js"></script>
-
-        <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
-        <!--
-        <script src="~/uren/assets/js/vendor/vendor.min.js"></script>
-        <script src="~/uren/assets/js/plugins/plugins.min.js"></script>
-        -->
-        <!-- Main JS -->
-        <script src="~/uren/assets/js/main.js"></script>
-         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-        <!-- Popper.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>*@
-
-
-
-
-
-
-
-
-
+﻿
 <!DOCTYPE html>
 <html lang="ar">
   <head>
@@ -318,18 +133,46 @@
             <!-- profile Product starts here -->
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#Products" aria-expanded="false" aria-controls="Products">
-                <span class="menu-title">Products</span>
+                <span class="menu-title">@Resources.Products</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-package-variant menu-icon"></i>
               </a>
               <div class="collapse" id="Products">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Tool" asp-action="Index">ProductList</a></li>
-                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Tool" asp-action="Create">AddProduct</a></li>
-                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Department" asp-action="Index">DepartmentList</a></li>
-                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Department" asp-action="Create">Addepartment</a></li>
-                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">CategoryList</a></li>
-                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Create">AddCategory</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Tool" asp-action="Index">@Resources.ProductList</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Tool" asp-action="Create">@Resources.AddProduct</a></li>
+                </ul>
+              </div>
+            </li>
+            <!-- profile Product ends here -->
+
+            <!-- profile Product starts here -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#Departments" aria-expanded="false" aria-controls="Departments">
+                <span class="menu-title">@Resources.Departments</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-package-variant menu-icon"></i>
+              </a>
+              <div class="collapse" id="Departments">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Department" asp-action="Index">@Resources.DepartmentList</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Department" asp-action="Create">@Resources.Addepartment</a></li>
+                </ul>
+              </div>
+            </li>
+            <!-- profile Product ends here -->
+
+            <!-- profile Product starts here -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#Categorys" aria-expanded="false" aria-controls="Categorys">
+                <span class="menu-title">@Resources.Categorys</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-package-variant menu-icon"></i>
+              </a>
+              <div class="collapse" id="Categorys">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">@Resources.CategoryList</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Create">@Resources.AddCategory</a></li>
                 </ul>
               </div>
             </li>

@@ -120,6 +120,15 @@
   <data name="AboutUs" xml:space="preserve">
     <value>من نحن</value>
   </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>اضافة صنف جديد</value>
+  </data>
+  <data name="Addepartment" xml:space="preserve">
+    <value>اضافة قسم جديد</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>اضافة منتج جديد</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>العنوان</value>
   </data>
@@ -150,8 +159,14 @@
   <data name="CategoryId" xml:space="preserve">
     <value>معرف التصنيف</value>
   </data>
+  <data name="CategoryList" xml:space="preserve">
+    <value>قائمة الاصناف</value>
+  </data>
   <data name="CategoryName" xml:space="preserve">
     <value>   إسم تصنيف المنتج</value>
+  </data>
+  <data name="Categorys" xml:space="preserve">
+    <value>تصنيفات المنتجات</value>
   </data>
   <data name="CategorysDatatable" xml:space="preserve">
     <value>قائمة التصنيفات الخاصة بالمنتجات</value>
@@ -222,8 +237,14 @@
   <data name="DepartmentId" xml:space="preserve">
     <value>  معرّف القسم</value>
   </data>
+  <data name="DepartmentList" xml:space="preserve">
+    <value>قائمة الاقسام</value>
+  </data>
   <data name="DepartmentName" xml:space="preserve">
     <value>اسم القسم</value>
+  </data>
+  <data name="Departments" xml:space="preserve">
+    <value>اقسام التصنيفات</value>
   </data>
   <data name="DepartmentsDatatable" xml:space="preserve">
     <value>قائمة الاقسام الخاصة بالمنتجات</value>
@@ -320,6 +341,12 @@
   </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value>الحقوق والسياسات</value>
+  </data>
+  <data name="ProductList" xml:space="preserve">
+    <value>قائمة المنتجات</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>المنتجات</value>
   </data>
   <data name="ProjectDone" xml:space="preserve">
     <value>المشارع المنجزة</value>
