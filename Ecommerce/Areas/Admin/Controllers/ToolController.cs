@@ -31,10 +31,10 @@ namespace Ecommerce.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ToolViewModel viewModel = new ToolViewModel();
-            viewModel.LisTbCategory = _unitOfWork.TbDepartment.GetAll().Select(u => new SelectListItem
+            viewModel.LisTbCategory = _unitOfWork.TbCategory.GetAll().Select(u => new SelectListItem
             {
-                Text = u.DepartmentName,
-                Value = u.DepartmentId.ToString()
+                Text = u.CategoryName,
+                Value = u.CategoryId.ToString()
             });
             viewModel.inpTbTool = new TbTool(); // تهيئة الكائن inpTbTool
             return View(viewModel);
@@ -50,10 +50,10 @@ namespace Ecommerce.Areas.Admin.Controllers
             //يوجد خطأ هنا في اختبار النموزج
             if (!(fieldValidationState != ModelValidationState.Valid))
             {
-                viewModel.LisTbCategory = _unitOfWork.TbDepartment.GetAll().Select(u => new SelectListItem
+                viewModel.LisTbCategory = _unitOfWork.TbCategory.GetAll().Select(u => new SelectListItem
                 {
-                    Text = u.DepartmentName,
-                    Value = u.DepartmentId.ToString()
+                    Text = u.CategoryName,
+                    Value = u.CategoryId.ToString()
                 });
                 return View(viewModel);
             }
