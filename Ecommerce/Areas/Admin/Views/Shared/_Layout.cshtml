@@ -308,7 +308,7 @@
             </li>
             <!-- profile MainPage starts here -->
             <li class="nav-item">
-              <a class="nav-link" href="../../index.html">
+              <a class="nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">
                 <span class="menu-title">MainPage</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -325,11 +325,11 @@
               <div class="collapse" id="Products">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Tool" asp-action="Index">ProductList</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/apps/todo.html">AddProduct</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Tool" asp-action="Create">AddProduct</a></li>
                   <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Department" asp-action="Index">DepartmentList</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/apps/todo.html">Addepartment</a></li>
-                  <li class="nav-item"> <a class="nav-link"  asp-area="Admin" asp-controller="Category" asp-action="Index">CategoryList</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="../../pages/apps/todo.html">AddCategory</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Department" asp-action="Create">Addepartment</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">CategoryList</a></li>
+                  <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Create">AddCategory</a></li>
                 </ul>
               </div>
             </li>

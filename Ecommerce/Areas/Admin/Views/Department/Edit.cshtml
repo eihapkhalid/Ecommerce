@@ -12,14 +12,14 @@
             <input asp-for="DepartmentId" hidden />
             <div class="border p-3 mt-4">
                 @*<div asp-validation-summary="ModelOnly"></div>*@
-               <div class="form-floating py-2 col-12">
+               <div class="form-group col-12">
+                   <label asp-for="DepartmentName" class="ms-2"></label>
                     <input asp-for="DepartmentName" class="form-control border-0 shadow" />
-                    <label asp-for="DepartmentName" class="ms-2"></label>
                     <span asp-validation-for="DepartmentName" class="text-danger"></span>
                 </div>
-                <div class="form-floating py-2 col-12">
-                    <input asp-for="DepartmentCurrentState" class="form-control border-0 shadow" />
+                <div class="form-group col-12">
                     <label asp-for="DepartmentCurrentState" class="ms-2"></label>
+                    <input asp-for="DepartmentCurrentState" class="form-control border-0 shadow" />
                     <span asp-validation-for="DepartmentCurrentState" class="text-danger"></span>
                 </div>
 
@@ -39,10 +39,3 @@
         </form>
     </div>
 </div>
-
-
-@section Scripts{
-    @{
-        <partial DepartmentName="_ValidationScriptsPartial"/>
-    }
-}

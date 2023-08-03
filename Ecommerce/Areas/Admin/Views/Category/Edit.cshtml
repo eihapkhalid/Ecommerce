@@ -24,22 +24,22 @@
         <input asp-for="inpTbCategory.CategoryId" hidden />
 
         <div class="border p-3 mt-4">
-            <div class="form-floating py-2 col-12">
-                <input asp-for="inpTbCategory.CategoryName" class="form-control border-0 shadow" />
+            <div class="form-group col-12">
                 <label asp-for="inpTbCategory.CategoryName" class="ms-2"></label>
+                <input asp-for="inpTbCategory.CategoryName" class="form-control border-0 shadow" />
                 <span asp-validation-for="inpTbCategory.CategoryName" class="text-danger"></span>
             </div>
-            <div class="form-floating py-2 col-12">
-                <input asp-for="inpTbCategory.CategoryCurrentState" class="form-control border-0 shadow" />
+            <div class="form-group col-12">
                 <label asp-for="inpTbCategory.CategoryCurrentState" class="ms-2"></label>
+                <input asp-for="inpTbCategory.CategoryCurrentState" class="form-control border-0 shadow" />
                 <span asp-validation-for="inpTbCategory.CategoryCurrentState" class="text-danger"></span>
             </div>
 
-             <div class="form-floating py-2 col-12">
+             <div class="form-group col-12">
+                 <label asp-for="inpTbCategory.DepartmentId" class="ms-2"></label>
                 <select asp-for="@Model.inpTbCategory.DepartmentId" asp-items="@Model.LisTbDepartment" class="form-select border-0 shadow">
                     <option disabled selected>--Select Department--</option>
                 </select>
-                <label asp-for="inpTbCategory.DepartmentId" class="ms-2"></label>
                 <span asp-validation-for="inpTbCategory.DepartmentId" class="text-danger"></span>
             </div>
 
@@ -56,8 +56,3 @@
         </div>
     </form>
 </div>
-
-@section Scripts{
-        <partial name="_ValidationScriptsPartial" />
-}
-
