@@ -147,6 +147,9 @@
   <data name="CategoryDatatable" xml:space="preserve">
     <value>قائمة التصنيفات</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>معرف التصنيف</value>
+  </data>
   <data name="CategoryName" xml:space="preserve">
     <value>   إسم تصنيف المنتج</value>
   </data>
@@ -177,6 +180,12 @@
   <data name="CreateNewDepartment" xml:space="preserve">
     <value>إنشاء قسم جديد</value>
   </data>
+  <data name="CreateNewTool" xml:space="preserve">
+    <value>اضافة منتج جديد</value>
+  </data>
+  <data name="CreateTool" xml:space="preserve">
+    <value>اضافة منتج جديد</value>
+  </data>
   <data name="Currency" xml:space="preserve">
     <value>العملة</value>
   </data>
@@ -197,6 +206,9 @@
   </data>
   <data name="DeleteDepartment" xml:space="preserve">
     <value>حذف القسم</value>
+  </data>
+  <data name="DeleteTool" xml:space="preserve">
+    <value>حذف منتج</value>
   </data>
   <data name="Department" xml:space="preserve">
     <value>الأقسام الرئيسية</value>
@@ -224,6 +236,9 @@
   </data>
   <data name="EditDepartment" xml:space="preserve">
     <value>تعديل بيانات القسم</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>تعديل بيانات المنتج</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>الإيميل</value>
@@ -324,8 +339,14 @@
   <data name="Search" xml:space="preserve">
     <value>بحث</value>
   </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>--اختر التصنيف المناسب للمنتج--</value>
+  </data>
   <data name="SelectDepartment" xml:space="preserve">
     <value>-- إختر القسم المناسب لهذا التصنيف --</value>
+  </data>
+  <data name="SelectTool" xml:space="preserve">
+    <value>--اختر المنتج المناسب--</value>
   </data>
   <data name="send" xml:space="preserve">
     <value>ارسال</value>
@@ -363,11 +384,35 @@
   <data name="TellUsYourMessage" xml:space="preserve">
     <value>أرسل رسالة</value>
   </data>
+  <data name="ToolCurrentState" xml:space="preserve">
+    <value>حالة المنتج</value>
+  </data>
+  <data name="ToolDatatable" xml:space="preserve">
+    <value>قائمة المنتجات</value>
+  </data>
+  <data name="ToolDescription" xml:space="preserve">
+    <value>وصف المنتج</value>
+  </data>
+  <data name="ToolName" xml:space="preserve">
+    <value>اسم المنتج</value>
+  </data>
+  <data name="ToolProductPrice" xml:space="preserve">
+    <value>سعر المنتج</value>
+  </data>
+  <data name="ToolsDatatable" xml:space="preserve">
+    <value>قائمة المنتجات</value>
+  </data>
+  <data name="ToolSticker" xml:space="preserve">
+    <value>الاستيكر</value>
+  </data>
   <data name="UpdateCategory" xml:space="preserve">
     <value>تحديث بيانات التصنيف</value>
   </data>
   <data name="UpdateDepartment" xml:space="preserve">
     <value>تحديث بيانات القسم</value>
+  </data>
+  <data name="UpdateTool" xml:space="preserve">
+    <value>تحديث المنتج</value>
   </data>
   <data name="Weensuresecurepayment" xml:space="preserve">
     <value>نحن نضمن دفع آمن</value>

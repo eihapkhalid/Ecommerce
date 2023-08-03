@@ -4,7 +4,7 @@
     <div class="card-header bg-secondary bg-gradient ml-0 py-3">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="text-white py-2">Create Tool</h2>
+                <h2 class="text-white py-2">@Resources.CreateTool</h2>
             </div>
         </div>
     </div>
@@ -14,45 +14,45 @@
              <div class="border p-3 mt-4">
                 @*<div asp-validation-summary="ModelOnly"></div>*@
                 <div class="form-group">
-                    <label asp-for="inpTbTool.ToolName" ></label>
+                    <label asp-for="inpTbTool.ToolName" >@Resources.ToolName</label>
                     <input asp-for="inpTbTool.ToolName" class="form-control border-0 shadow" />
                     <span asp-validation-for="inpTbTool.ToolName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="inpTbTool.ToolProductPrice" ></label>
+                    <label asp-for="inpTbTool.ToolProductPrice" >@Resources.ToolProductPrice</label>
                     <input asp-for="inpTbTool.ToolProductPrice" class="form-control border-0 shadow" />
                     <span asp-validation-for="inpTbTool.ToolProductPrice" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="inpTbTool.ToolCurrentState" ></label>
+                    <label asp-for="inpTbTool.ToolCurrentState" >@Resources.ToolCurrentState</label>
                     <input asp-for="inpTbTool.ToolCurrentState" class="form-control border-0 shadow" />
                     <span asp-validation-for="inpTbTool.ToolCurrentState" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="inpTbTool.ToolDescription" ></label>
+                    <label asp-for="inpTbTool.ToolDescription" >@Resources.ToolDescription</label>
                     <textarea asp-for="inpTbTool.ToolDescription" class="form-control" rows="4"></textarea>
                     <span asp-validation-for="inpTbTool.ToolDescription" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="inpTbTool.ToolSticker" ></label>
+                    <label asp-for="inpTbTool.ToolSticker" >@Resources.ToolSticker</label>
                     <textarea asp-for="inpTbTool.ToolSticker" class="form-control" rows="4"></textarea>
                     <span asp-validation-for="inpTbTool.ToolSticker" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="inpTbTool.CategoryId" ></label>
+                    <label asp-for="inpTbTool.CategoryId" >@Resources.CategoryId</label>
                     <select asp-for="inpTbTool.CategoryId" asp-items="@Model.LisTbCategory" class="form-select border-0 shadow">
-                        <option disabled selected>--Select Tool--</option>
+                        <option disabled selected>@Resources.SelectCategory</option>
                     </select>
                     <span asp-validation-for="inpTbTool.CategoryId" class="text-danger"></span>
                 </div>
 
                 <div class="row pt-2">
                     <div class="col-6 col-md-3">
-                        <button type="submit" class="btn btn-primary form-control">Create</button>
+                        <button type="submit" class="btn btn-primary form-control">@Resources.Create</button>
                     </div>
                     <div class="col-6 col-md-3">
                         <a asp-controller="Tool" asp-action="Index" class="btn btn-outline-primary border  form-control">
-                            Back to List
+                            @Resources.BacktoList
                         </a>
                     </div>
                 </div>

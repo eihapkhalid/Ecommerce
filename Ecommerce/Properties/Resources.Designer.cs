@@ -151,6 +151,15 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to معرف التصنيف.
+        /// </summary>
+        public static string CategoryId {
+            get {
+                return ResourceManager.GetString("CategoryId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to    إسم تصنيف المنتج.
         /// </summary>
         public static string CategoryName {
@@ -241,6 +250,24 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافة منتج جديد.
+        /// </summary>
+        public static string CreateNewTool {
+            get {
+                return ResourceManager.GetString("CreateNewTool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافة منتج جديد.
+        /// </summary>
+        public static string CreateTool {
+            get {
+                return ResourceManager.GetString("CreateTool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to العملة.
         /// </summary>
         public static string Currency {
@@ -300,6 +327,15 @@ namespace Ecommerce.Properties {
         public static string DeleteDepartment {
             get {
                 return ResourceManager.GetString("DeleteDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حذف منتج.
+        /// </summary>
+        public static string DeleteTool {
+            get {
+                return ResourceManager.GetString("DeleteTool", resourceCulture);
             }
         }
         
@@ -381,6 +417,15 @@ namespace Ecommerce.Properties {
         public static string EditDepartment {
             get {
                 return ResourceManager.GetString("EditDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات المنتج.
+        /// </summary>
+        public static string EditTool {
+            get {
+                return ResourceManager.GetString("EditTool", resourceCulture);
             }
         }
         
@@ -682,11 +727,29 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to --اختر التصنيف المناسب للمنتج--.
+        /// </summary>
+        public static string SelectCategory {
+            get {
+                return ResourceManager.GetString("SelectCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to -- إختر القسم المناسب لهذا التصنيف --.
         /// </summary>
         public static string SelectDepartment {
             get {
                 return ResourceManager.GetString("SelectDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --اختر المنتج المناسب--.
+        /// </summary>
+        public static string SelectTool {
+            get {
+                return ResourceManager.GetString("SelectTool", resourceCulture);
             }
         }
         
@@ -799,6 +862,69 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حالة المنتج.
+        /// </summary>
+        public static string ToolCurrentState {
+            get {
+                return ResourceManager.GetString("ToolCurrentState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة المنتجات.
+        /// </summary>
+        public static string ToolDatatable {
+            get {
+                return ResourceManager.GetString("ToolDatatable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وصف المنتج.
+        /// </summary>
+        public static string ToolDescription {
+            get {
+                return ResourceManager.GetString("ToolDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اسم المنتج.
+        /// </summary>
+        public static string ToolName {
+            get {
+                return ResourceManager.GetString("ToolName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سعر المنتج.
+        /// </summary>
+        public static string ToolProductPrice {
+            get {
+                return ResourceManager.GetString("ToolProductPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة المنتجات.
+        /// </summary>
+        public static string ToolsDatatable {
+            get {
+                return ResourceManager.GetString("ToolsDatatable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الاستيكر.
+        /// </summary>
+        public static string ToolSticker {
+            get {
+                return ResourceManager.GetString("ToolSticker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تحديث بيانات التصنيف.
         /// </summary>
         public static string UpdateCategory {
@@ -813,6 +939,15 @@ namespace Ecommerce.Properties {
         public static string UpdateDepartment {
             get {
                 return ResourceManager.GetString("UpdateDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحديث المنتج.
+        /// </summary>
+        public static string UpdateTool {
+            get {
+                return ResourceManager.GetString("UpdateTool", resourceCulture);
             }
         }
         
