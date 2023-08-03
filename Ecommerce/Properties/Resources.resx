@@ -168,8 +168,14 @@
   <data name="CreateCategory" xml:space="preserve">
     <value>إضافة تصنيف جديد</value>
   </data>
+  <data name="CreateDepartment" xml:space="preserve">
+    <value>اضافة قسم جديد لتصنيفات المنتجات</value>
+  </data>
   <data name="CreateNewCategory" xml:space="preserve">
     <value>اضافة تصنيف جديد للمنتجات</value>
+  </data>
+  <data name="CreateNewDepartment" xml:space="preserve">
+    <value>إنشاء قسم جديد</value>
   </data>
   <data name="Currency" xml:space="preserve">
     <value>العملة</value>
@@ -189,17 +195,35 @@
   <data name="DeleteCategory" xml:space="preserve">
     <value>حذف تصنيفات المنتجات</value>
   </data>
+  <data name="DeleteDepartment" xml:space="preserve">
+    <value>حذف القسم</value>
+  </data>
   <data name="Department" xml:space="preserve">
     <value>الأقسام الرئيسية</value>
   </data>
+  <data name="DepartmentCurrentState" xml:space="preserve">
+    <value>حالة القسم</value>
+  </data>
+  <data name="DepartmentDatatable" xml:space="preserve">
+    <value>قائمة الاقسام</value>
+  </data>
   <data name="DepartmentId" xml:space="preserve">
     <value>  معرّف القسم</value>
+  </data>
+  <data name="DepartmentName" xml:space="preserve">
+    <value>اسم القسم</value>
+  </data>
+  <data name="DepartmentsDatatable" xml:space="preserve">
+    <value>قائمة الاقسام الخاصة بالمنتجات</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>تعديل</value>
   </data>
   <data name="EditCategory" xml:space="preserve">
     <value>تعديل تصنيف منتج</value>
+  </data>
+  <data name="EditDepartment" xml:space="preserve">
+    <value>تعديل بيانات القسم</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>الإيميل</value>
@@ -339,8 +363,11 @@
   <data name="TellUsYourMessage" xml:space="preserve">
     <value>أرسل رسالة</value>
   </data>
-  <data name="Update" xml:space="preserve">
-    <value>تحديث بيانات المنتج</value>
+  <data name="UpdateCategory" xml:space="preserve">
+    <value>تحديث بيانات التصنيف</value>
+  </data>
+  <data name="UpdateDepartment" xml:space="preserve">
+    <value>تحديث بيانات القسم</value>
   </data>
   <data name="Weensuresecurepayment" xml:space="preserve">
     <value>نحن نضمن دفع آمن</value>

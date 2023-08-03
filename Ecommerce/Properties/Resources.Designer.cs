@@ -214,11 +214,29 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافة قسم جديد لتصنيفات المنتجات.
+        /// </summary>
+        public static string CreateDepartment {
+            get {
+                return ResourceManager.GetString("CreateDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اضافة تصنيف جديد للمنتجات.
         /// </summary>
         public static string CreateNewCategory {
             get {
                 return ResourceManager.GetString("CreateNewCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إنشاء قسم جديد.
+        /// </summary>
+        public static string CreateNewDepartment {
+            get {
+                return ResourceManager.GetString("CreateNewDepartment", resourceCulture);
             }
         }
         
@@ -277,6 +295,15 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حذف القسم.
+        /// </summary>
+        public static string DeleteDepartment {
+            get {
+                return ResourceManager.GetString("DeleteDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الأقسام الرئيسية.
         /// </summary>
         public static string Department {
@@ -286,11 +313,47 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حالة القسم.
+        /// </summary>
+        public static string DepartmentCurrentState {
+            get {
+                return ResourceManager.GetString("DepartmentCurrentState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة الاقسام.
+        /// </summary>
+        public static string DepartmentDatatable {
+            get {
+                return ResourceManager.GetString("DepartmentDatatable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   معرّف القسم.
         /// </summary>
         public static string DepartmentId {
             get {
                 return ResourceManager.GetString("DepartmentId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اسم القسم.
+        /// </summary>
+        public static string DepartmentName {
+            get {
+                return ResourceManager.GetString("DepartmentName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة الاقسام الخاصة بالمنتجات.
+        /// </summary>
+        public static string DepartmentsDatatable {
+            get {
+                return ResourceManager.GetString("DepartmentsDatatable", resourceCulture);
             }
         }
         
@@ -309,6 +372,15 @@ namespace Ecommerce.Properties {
         public static string EditCategory {
             get {
                 return ResourceManager.GetString("EditCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات القسم.
+        /// </summary>
+        public static string EditDepartment {
+            get {
+                return ResourceManager.GetString("EditDepartment", resourceCulture);
             }
         }
         
@@ -727,11 +799,20 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تحديث بيانات المنتج.
+        ///   Looks up a localized string similar to تحديث بيانات التصنيف.
         /// </summary>
-        public static string Update {
+        public static string UpdateCategory {
             get {
-                return ResourceManager.GetString("Update", resourceCulture);
+                return ResourceManager.GetString("UpdateCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحديث بيانات القسم.
+        /// </summary>
+        public static string UpdateDepartment {
+            get {
+                return ResourceManager.GetString("UpdateDepartment", resourceCulture);
             }
         }
         
