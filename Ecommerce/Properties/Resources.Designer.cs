@@ -151,6 +151,15 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to المنتجات الاكثر مبيعا.
+        /// </summary>
+        public static string BestSellingProducts {
+            get {
+                return ResourceManager.GetString("BestSellingProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to السلة.
         /// </summary>
         public static string Cart {
@@ -219,6 +228,15 @@ namespace Ecommerce.Properties {
         public static string CategorysDatatable {
             get {
                 return ResourceManager.GetString("CategorysDatatable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قارن هذا المنتج.
+        /// </summary>
+        public static string CompareThisProduct {
+            get {
+                return ResourceManager.GetString("CompareThisProduct", resourceCulture);
             }
         }
         
@@ -331,7 +349,16 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to إرجاع خلال 90 يومًا.
+        ///   Looks up a localized string similar to يوما.
+        /// </summary>
+        public static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إرجاع خلال.
         /// </summary>
         public static string DaysReturn {
             get {
@@ -673,6 +700,15 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to منتجات واصله حديثا.
+        /// </summary>
+        public static string NewArrivalsProducts {
+            get {
+                return ResourceManager.GetString("NewArrivalsProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الأخبار.
         /// </summary>
         public static string Newsletter {
@@ -682,7 +718,7 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to خصم.
         /// </summary>
         public static string off {
             get {
@@ -862,6 +898,15 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تسوق عن طريق العلامة التجارية.
+        /// </summary>
+        public static string ShopByBrands {
+            get {
+                return ResourceManager.GetString("ShopByBrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تسوق الان.
         /// </summary>
         public static string ShopNow {
@@ -880,7 +925,7 @@ namespace Ecommerce.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to عرض خاص لفترة محدودة.
+        ///   Looks up a localized string similar to أسرع  بسرعة ! العرض ينتهي في :.
         /// </summary>
         public static string SpecialOfferLimitedTime {
             get {
@@ -1002,6 +1047,33 @@ namespace Ecommerce.Properties {
         public static string ToolSticker {
             get {
                 return ResourceManager.GetString("ToolSticker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الاكثر مبيعا لهذا الاسبوع.
+        /// </summary>
+        public static string TopBestSellingOnThisWeek {
+            get {
+                return ResourceManager.GetString("TopBestSellingOnThisWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جديد هذا الاسبوع.
+        /// </summary>
+        public static string TopNewOnThisWeek {
+            get {
+                return ResourceManager.GetString("TopNewOnThisWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شريك عالي الجودة.
+        /// </summary>
+        public static string TopQualityPartner {
+            get {
+                return ResourceManager.GetString("TopQualityPartner", resourceCulture);
             }
         }
         

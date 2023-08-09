@@ -43,43 +43,17 @@
     <!--<link rel="stylesheet" href="~/uren/assets/css/style.min.css">-->
 
 </head>
-@*
-<style>
-    /* تعديل اتجاه النص في العناصر */
-    body {
-        direction: rtl;
-    }
-
-    .nice-select::after {
-        right: auto;
-        left: 10px;
-    }
-
-    .select-search-category-wrapper {
-        position: relative;
-        display: inline-block;
-    }
-
-    .category-arrow {
-        position: absolute;
-        left: -10px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #000;
-        font-size: 18px;
-    }
-</style> *@
 
 <body class="template-color-1 text-right">
 
     <div class="main-wrapper">
-
         <!-- Begin Uren's Header Main Area -->
         <header class="header-main_area header-main_area-2 bg--black">
             @await Component.InvokeAsync("MenuNavigation")
         </header>
+    </div>
         <!-- Uren's Header Main Area End Here -->
-        <div class="container">
+        <div>
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>

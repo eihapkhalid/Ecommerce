@@ -7,6 +7,13 @@ namespace Ecommerce.Models
         public TbTool()
         {
             TbCategory _TbCategory = new TbCategory();
+
+            TbDealOfTheDay _TbDealOfTheDay  = new TbDealOfTheDay();
+
+            TbNewArrivalProduct _TbNewArrivalProduct = new TbNewArrivalProduct();
+
+            TbNumberOfPayment _TbNumberOfPayment = new TbNumberOfPayment();
+
             ICollection<TbImageTool> _TbImageTool = new HashSet<TbImageTool>();
         }
 
@@ -32,10 +39,21 @@ namespace Ecommerce.Models
         [RegularExpression(@"^\d{1,6}(\.\d{1,2})?$", ErrorMessage = "Price must have 6 digits before the decimal point and 2 decimal places")]
         public decimal ToolProductPrice { get; set; }
 
+        
 
         /********************************************/
         public int CategoryId { get; set; }
         public virtual TbCategory _TbCategory { get; set; }
+
+        public int? DealOfTheDayId { get; set; }
+        public virtual TbDealOfTheDay _TbDealOfTheDay { get; set; }
+
+        public int? NewArrivalProductId { get; set; }
+        public virtual TbNewArrivalProduct _TbNewArrivalProduct { get; set; }
+
+        public int? NumberOfPaymentId { get; set; }
+        public virtual TbNumberOfPayment _TbNumberOfPayment { get; set; }
+
 
         public virtual ICollection<TbImageTool> _TbImageTool { get; set; }
         /********************************************/

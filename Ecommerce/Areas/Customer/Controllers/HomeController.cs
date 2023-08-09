@@ -25,39 +25,43 @@ namespace Ecommerce.Areas.Customer.Controllers
         #region Index
         public IActionResult Index()
         {
-            var viewModel = GetCachedIndexShopViewModel();
+            var viewModel = GetCachedIndexHomeViewModel();
             return View("Index", viewModel);
         }
         #endregion
 
         #region GetCachedIndexViewModel
-        private IndexShopViewModel GetCachedIndexShopViewModel()
+        private IndexHomeViewModel GetCachedIndexHomeViewModel()
         {
-            const string cacheKey = "IndexShopViewModel";
+            const string cacheKey = "IndexHomeViewModel";
 
-            if (!_cache.TryGetValue(cacheKey, out IndexShopViewModel viewModel))
+            if (!_cache.TryGetValue(cacheKey, out IndexHomeViewModel viewModel))
             {
-                viewModel = new IndexShopViewModel
+                _logger.LogInformation("Cache miss: Loading IndexViewModel from the database.");
+
+                viewModel = new IndexHomeViewModel
                 {
                     lstTbCategorys = _unitOfWork.TbCategory.GetAll().ToList(),
                     lstTbTools = _unitOfWork.TbTool.GetAll(null, "_TbImageTool").ToList(),
-                    lstTbDepartments = _unitOfWork.TbDepartment.GetAll().ToList()
+                    lstTbDepartments = _unitOfWork.TbDepartment.GetAll().ToList(),
+                    lstTbNewArrivalProducts = _unitOfWork.TbNewArrivalProduct.GetAll().ToList(),
+                    lstTbDealOfTheDays = _unitOfWork.TbDealOfTheDay.GetAll().ToList(),
+                    lstTbNumberOfPayments = _unitOfWork.TbNumberOfPayment.GetAll().ToList()
                 };
 
                 var cacheOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromMinutes(10));
 
                 _cache.Set(cacheKey, viewModel, cacheOptions);
-
-                _logger.LogInformation("IndexViewModel loaded from the database.");
             }
             else
             {
-                _logger.LogInformation("IndexViewModel loaded from the cache.");
+                _logger.LogInformation("Cache hit: IndexViewModel loaded from the cache.");
             }
 
             return viewModel;
         }
+
         #endregion
 
         #region Privacy

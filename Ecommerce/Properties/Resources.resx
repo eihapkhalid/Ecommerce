@@ -147,6 +147,9 @@
   <data name="BacktoList" xml:space="preserve">
     <value>الرجوع للقائمة السابقة</value>
   </data>
+  <data name="BestSellingProducts" xml:space="preserve">
+    <value>المنتجات الاكثر مبيعا</value>
+  </data>
   <data name="Cart" xml:space="preserve">
     <value>السلة</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="CategorysDatatable" xml:space="preserve">
     <value>قائمة التصنيفات الخاصة بالمنتجات</value>
+  </data>
+  <data name="CompareThisProduct" xml:space="preserve">
+    <value>قارن هذا المنتج</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>تواصل معنا</value>
@@ -207,8 +213,11 @@
   <data name="CustomerService" xml:space="preserve">
     <value>خدماتنا</value>
   </data>
+  <data name="Days" xml:space="preserve">
+    <value>يوما</value>
+  </data>
   <data name="DaysReturn" xml:space="preserve">
-    <value>إرجاع خلال 90 يومًا</value>
+    <value>إرجاع خلال</value>
   </data>
   <data name="DealOfTheDay" xml:space="preserve">
     <value> صفقة اليوم </value>
@@ -321,11 +330,14 @@
   <data name="MyAccount" xml:space="preserve">
     <value>الحساب</value>
   </data>
+  <data name="NewArrivalsProducts" xml:space="preserve">
+    <value>منتجات واصله حديثا</value>
+  </data>
   <data name="Newsletter" xml:space="preserve">
     <value>الأخبار</value>
   </data>
   <data name="off" xml:space="preserve">
-    <value />
+    <value>خصم</value>
   </data>
   <data name="OrderHistory" xml:space="preserve">
     <value>الطلبات السابقة</value>
@@ -384,6 +396,9 @@
   <data name="ShopBy" xml:space="preserve">
     <value>تسوق من:</value>
   </data>
+  <data name="ShopByBrands" xml:space="preserve">
+    <value>تسوق عن طريق العلامة التجارية</value>
+  </data>
   <data name="ShopNow" xml:space="preserve">
     <value>تسوق الان</value>
   </data>
@@ -391,7 +406,7 @@
     <value>خريطة الموقع</value>
   </data>
   <data name="SpecialOfferLimitedTime" xml:space="preserve">
-    <value>عرض خاص لفترة محدودة</value>
+    <value>أسرع  بسرعة ! العرض ينتهي في :</value>
   </data>
   <data name="Startingat" xml:space="preserve">
     <value>تبدأ من </value>
@@ -431,6 +446,15 @@
   </data>
   <data name="ToolSticker" xml:space="preserve">
     <value>الاستيكر</value>
+  </data>
+  <data name="TopBestSellingOnThisWeek" xml:space="preserve">
+    <value>الاكثر مبيعا لهذا الاسبوع</value>
+  </data>
+  <data name="TopNewOnThisWeek" xml:space="preserve">
+    <value>جديد هذا الاسبوع</value>
+  </data>
+  <data name="TopQualityPartner" xml:space="preserve">
+    <value>شريك عالي الجودة</value>
   </data>
   <data name="UpdateCategory" xml:space="preserve">
     <value>تحديث بيانات التصنيف</value>

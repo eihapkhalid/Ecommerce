@@ -19,8 +19,9 @@ namespace Ecommerce.DataAccess.Data
         public DbSet<TbAbout> TbAbouts { get; set; }
         public DbSet<TbTeam> TbTeams { get; set; }
         public DbSet<TbTellUs> TbTellUss { get; set; }
-
-
+        public DbSet<TbDealOfTheDay> TbDealOfTheDays { get; set; }
+        public DbSet<TbNewArrivalProduct> TbNewArrivalProducts { get; set; }
+        public DbSet<TbNumberOfPayment> TbNumberOfPayments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -61,6 +62,22 @@ namespace Ecommerce.DataAccess.Data
                      .HasMany(c => c._TbTeam)
                      .WithOne(b => b._TbAbout)
                      .HasForeignKey(b => b.AboutId);
+
+            modelBuilder.Entity<TbDealOfTheDay>()
+                     .HasMany(c => c._TbTool)
+                     .WithOne(b => b._TbDealOfTheDay)
+                     .HasForeignKey(b => b.DealOfTheDayId);
+
+            modelBuilder.Entity<TbNewArrivalProduct>()
+                    .HasMany(c => c._TbTool)
+                    .WithOne(b => b._TbNewArrivalProduct)
+                    .HasForeignKey(b => b.NewArrivalProductId);
+
+            modelBuilder.Entity<TbNumberOfPayment>()
+                    .HasMany(c => c._TbTool)
+                    .WithOne(b => b._TbNumberOfPayment)
+                    .HasForeignKey(b => b.NumberOfPaymentId);
+            /*
             // Seed data tables:
             modelBuilder.Entity<TbDepartment>().HasData(
                     new TbDepartment { DepartmentId = 1, DepartmentName = "Action", DepartmentCurrentState = 1 },
@@ -143,7 +160,7 @@ namespace Ecommerce.DataAccess.Data
                     TellMessage = "نص الرسالة",
                     TellCurrentState = 1
                 }
-            );
+            );*/
         }
     }
 }

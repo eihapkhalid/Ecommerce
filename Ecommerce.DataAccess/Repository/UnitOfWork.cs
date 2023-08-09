@@ -17,6 +17,11 @@ namespace Ecommerce.DataAccess.Repository
         public ITeamRepository TbTeams { get; private set; }
         public IToolRepository TbTool { get; private set; }
         public ITellUsRepository TbTellUs { get; private set; }
+        public IDealOfTheDayRepository TbDealOfTheDay { get; private set; }
+        public INewArrivalProductRepository TbNewArrivalProduct { get; private set; }
+        public INumberOfPaymentRepository TbNumberOfPayment { get; private set; }
+
+
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
@@ -30,6 +35,9 @@ namespace Ecommerce.DataAccess.Repository
             TbTeams = new TeamRepository(_db);
             TbTool = new ToolRepository(_db);
             TbTellUs = new TellUsRepository(_db);
+            TbDealOfTheDay = new DealOfTheDayRepository(_db);
+            TbNewArrivalProduct = new NewArrivalProductRepository(_db);
+            TbNumberOfPayment = new NumberOfPaymentRepository(_db);
         }
         #endregion
 

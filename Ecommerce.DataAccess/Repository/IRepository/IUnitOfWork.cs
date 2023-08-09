@@ -13,5 +13,8 @@
         public ITeamRepository TbTeams { get; }
         public IToolRepository TbTool { get; }
         public ITellUsRepository TbTellUs { get; }
+        public IDealOfTheDayRepository TbDealOfTheDay { get; }
+        public INewArrivalProductRepository TbNewArrivalProduct { get; }
+        public INumberOfPaymentRepository TbNumberOfPayment { get; }
     }
 }

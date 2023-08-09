@@ -1,6 +1,9 @@
 ﻿using Ecommerce.DataAccess.Data;
 using Ecommerce.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Ecommerce.DataAccess.Repository
@@ -14,10 +17,7 @@ namespace Ecommerce.DataAccess.Repository
         {
             _db = db;
             this.dbSet = _db.Set<T>();
-            //_db.Categories == dbSet
-            // _db.Products.Include(u => u.Category).Include(u => u.CategoryId);
-
-        } 
+        }
         #endregion
 
         #region Add
@@ -34,7 +34,6 @@ namespace Ecommerce.DataAccess.Repository
             if (tracked)
             {
                 query = dbSet;
-
             }
             else
             {
@@ -50,19 +49,21 @@ namespace Ecommerce.DataAccess.Repository
                     query = query.Include(includeProp);
                 }
             }
-            return query.FirstOrDefault();
 
+            return query.FirstOrDefault();
         }
         #endregion
 
         #region GetAll
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter, string? includeProperties = null)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, string includeProperties = null)
         {
             IQueryable<T> query = dbSet;
+
             if (filter != null)
             {
                 query = query.Where(filter);
             }
+
             if (!string.IsNullOrEmpty(includeProperties))
             {
                 foreach (var includeProp in includeProperties
@@ -71,6 +72,7 @@ namespace Ecommerce.DataAccess.Repository
                     query = query.Include(includeProp);
                 }
             }
+
             return query.ToList();
         }
         #endregion
@@ -86,7 +88,7 @@ namespace Ecommerce.DataAccess.Repository
         public void RemoveRange(IEnumerable<T> entity)
         {
             dbSet.RemoveRange(entity);
-        } 
+        }
         #endregion
     }
 }

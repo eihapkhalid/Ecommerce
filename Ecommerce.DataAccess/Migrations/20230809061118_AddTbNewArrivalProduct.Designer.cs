@@ -4,6 +4,7 @@ using Ecommerce.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230809061118_AddTbNewArrivalProduct")]
+    partial class AddTbNewArrivalProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,25 +280,6 @@ namespace Ecommerce.DataAccess.Migrations
                     b.ToTable("TbNewArrivalProducts");
                 });
 
-            modelBuilder.Entity("Ecommerce.Models.TbNumberOfPayment", b =>
-                {
-                    b.Property<int>("NumberOfPaymentId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NumberOfPaymentId"));
-
-                    b.Property<int>("NumberOfPayment")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ToolCurrentState")
-                        .HasColumnType("int");
-
-                    b.HasKey("NumberOfPaymentId");
-
-                    b.ToTable("TbNumberOfPayments");
-                });
-
             modelBuilder.Entity("Ecommerce.Models.TbTeam", b =>
                 {
                     b.Property<int>("TeamId")
@@ -381,13 +365,10 @@ namespace Ecommerce.DataAccess.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DealOfTheDayId")
+                    b.Property<int>("DealOfTheDayId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NewArrivalProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("NumberOfPaymentId")
+                    b.Property<int>("NewArrivalProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("ToolCurrentState")
@@ -418,8 +399,6 @@ namespace Ecommerce.DataAccess.Migrations
                     b.HasIndex("DealOfTheDayId");
 
                     b.HasIndex("NewArrivalProductId");
-
-                    b.HasIndex("NumberOfPaymentId");
 
                     b.ToTable("TbTools");
                 });
@@ -489,23 +468,21 @@ namespace Ecommerce.DataAccess.Migrations
 
                     b.HasOne("Ecommerce.Models.TbDealOfTheDay", "_TbDealOfTheDay")
                         .WithMany("_TbTool")
-                        .HasForeignKey("DealOfTheDayId");
+                        .HasForeignKey("DealOfTheDayId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Ecommerce.Models.TbNewArrivalProduct", "_TbNewArrivalProduct")
                         .WithMany("_TbTool")
-                        .HasForeignKey("NewArrivalProductId");
-
-                    b.HasOne("Ecommerce.Models.TbNumberOfPayment", "_TbNumberOfPayment")
-                        .WithMany("_TbTool")
-                        .HasForeignKey("NumberOfPaymentId");
+                        .HasForeignKey("NewArrivalProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("_TbCategory");
 
                     b.Navigation("_TbDealOfTheDay");
 
                     b.Navigation("_TbNewArrivalProduct");
-
-                    b.Navigation("_TbNumberOfPayment");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.TbAbout", b =>
@@ -536,11 +513,6 @@ namespace Ecommerce.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("Ecommerce.Models.TbNewArrivalProduct", b =>
-                {
-                    b.Navigation("_TbTool");
-                });
-
-            modelBuilder.Entity("Ecommerce.Models.TbNumberOfPayment", b =>
                 {
                     b.Navigation("_TbTool");
                 });
