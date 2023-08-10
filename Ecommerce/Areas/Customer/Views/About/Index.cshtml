@@ -1,22 +1,21 @@
 ﻿@model IndexAboutViewModel
 
 
-<!-- Begin Uren's Breadcrumb Area -->
-<div class="breadcrumb-area">
-    <div class="container">
-    </div>
-</div>
-<!-- Uren's Breadcrumb Area End Here -->
-<!-- Begin Uren's About Us Area -->
-<div class="about-us-area">
-    <div class="container-fluid">
-        @foreach (var about in Model.lstTbAbouts)
-        {
+ <!-- Begin Uren's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+        </div>
+        <!-- Uren's Breadcrumb Area End Here -->
+
+        <!-- Begin Uren's About Us Area -->
+        <div class="about-us-area">
+            <div class="container-fluid">
+            @foreach (var about in Model.lstTbAbouts)
+            {
                 <div class="row">
                     <div class="col-lg-6 col-md-5">
                         <div class="overview-img text-center img-hover_effect">
                             <a href="#">
-                                <img class="img-full" src="~/uren/assets/images/about-us/@about.AboutDescriptionImg" alt="Uren's About Us Image">
+                                <img class="img-full" src="~/uren/assets/images/about-us/1.jpg" alt="Uren's About Us Image">
                             </a>
                         </div>
                     </div>
@@ -25,21 +24,22 @@
                             <h2>@Resources.WelcomeTo <span>@about.AboutTitelDescription</span> @Resources.Store</h2>
                             <p class="short_desc">@about.AboutDescription</p>
                             <div class="uren-about-us_btn-area">
-                                <a class="about-us_btn" href="shop-left-sidebar.html">@Resources.ShopNow</a>
+                                    <a class="about-us_btn" href="shop-left-sidebar.html">@Resources.ShopNow</a>
                             </div>
                         </div>
                     </div>
                 </div>
-        }
-    </div>
-</div>
-<!-- Uren's About Us Area End Here -->
-<!-- Begin Uren's Project Countdown Area -->
-<div class="project-count-area">
-    <div class="container-fluid">
-        <div class="row">
-            @foreach (var about in Model.lstTbAbouts)
-            {
+            }
+            </div>
+        </div>
+        <!-- Uren's About Us Area End Here -->
+
+        <!-- Begin Uren's Project Countdown Area -->
+        <div class="project-count-area">
+            <div class="container-fluid">
+                <div class="row">
+                @foreach (var about in Model.lstTbAbouts)
+                {
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-count text-center">
                             <div class="count-icon">
@@ -84,33 +84,29 @@
                             </div>
                         </div>
                     </div>
-            }
+                }
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<!-- Uren's Project Countdown Area End Here -->
-<!-- Begin Uren's Team Area -->
-<div class="team-area">
-    <div class="container-fluid">
-        @foreach (var about in Model.lstTbAbouts)
-        {
+        <!-- Uren's Project Countdown Area End Here -->
+
+        <!-- Begin Uren's Team Area -->
+        <div class="team-area">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="section_title-2">
-                            <h3>@Resources.OurTeam</h3>
-                        </div>
-                    </div>
+
                 </div> <!-- section title end -->
                 <div class="row">
-                @*@foreach (var team in about._TbTeam)
+                @foreach (var about in Model.lstTbAbouts)
                 {
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-
-                        <div class="team-member">
-
-                            <div class="team-thumb img-hover_effect">
+                    @foreach (var team in about._TbTeam)
+                    {
+                        <!--  single team member start -->
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="team-member">
+                                <div class="team-thumb img-hover_effect">
                                 <a href="#">
-                                    <img src="~/uren/assets/images/about-us/team/1.jpg" alt="Our Team Member">
+                                    <img src="~/uren/assets/images/about-us/team/@team.TeamImg" alt="Our Team Member">
                                 </a>
                             </div>
                             <div class="team-content text-center">
@@ -118,12 +114,12 @@
                                 <p>@team.TeamTitle</p>
                                 <a href="#">@team.TeamDescription</a>
                             </div>
-
-                        </div>*@
-                        </div> <!-- end single team member -->
-        }
+                            </div>
+                        </div> 
+                        <!-- end single team member -->
+                    }
+                }
+                </div>
             </div>
-        }
-    </div>
-</div>
-<!-- Uren's Team Area End Here -->
+        </div>
+        <!-- Uren's Team Area End Here -->

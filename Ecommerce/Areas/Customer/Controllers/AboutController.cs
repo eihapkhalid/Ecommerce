@@ -39,7 +39,8 @@ namespace Ecommerce.Areas.Customer.Controllers
 
                 viewModel = new IndexAboutViewModel
                 {
-                    lstTbAbouts = _unitOfWork.TbAbout.GetAll().ToList()
+                    lstTbAbouts = _unitOfWork.TbAbout.GetAll().ToList(),
+                    lesTbTeams = _unitOfWork.TbTeams.GetAll().ToList()
                 };
 
                 var cacheOptions = new MemoryCacheEntryOptions()
